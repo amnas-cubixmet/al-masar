@@ -9,7 +9,7 @@ export interface TextareaProps extends TextareaHTMLAttributes<HTMLTextAreaElemen
 const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
   ({ className, label, error, ...props }, ref) => {
     return (
-      <div className="w-full">
+      <div className="w-full min-w-0">
         {label && (
           <label className="mb-2 block text-xs font-medium text-slate-300">
             {label}
@@ -18,7 +18,7 @@ const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
         <textarea
           ref={ref}
           className={cn(
-            "w-full rounded-xl border border-white/10 bg-[#151E2D] p-3.5 text-sm text-white outline-none placeholder:text-slate-500 focus:border-[#6993CF]/60 transition min-h-[140px]",
+            "min-h-[140px] w-full min-w-0 resize-y rounded-xl border border-white/10 bg-[#151E2D] p-3.5 text-base text-white outline-none transition placeholder:text-slate-500 focus:border-[#6993CF]/60 md:text-sm",
             error && "border-rose-500/60 focus:border-rose-500",
             className
           )}

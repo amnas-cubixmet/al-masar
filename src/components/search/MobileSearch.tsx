@@ -54,24 +54,26 @@ export default function MobileSearch({
   if (!open) return null;
 
   return (
-    <div className="border-t border-white/10 bg-[#0B111C] px-3 py-3 lg:hidden">
-      <div className="flex h-11 items-center gap-2 rounded-xl border border-white/10 bg-[#151E2D] px-3">
+    <div className="min-w-0 border-t border-white/10 bg-[#0B111C] px-3 py-3 lg:hidden">
+      <div className="flex h-11 min-w-0 items-center gap-2 rounded-xl border border-white/10 bg-[#151E2D] px-3">
         <Search size={18} className="shrink-0 text-[#6993CF]" />
         <input
           type="search"
+          inputMode="search"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
           placeholder={isArabic ? "ابحث في المنتجات..." : "Search products..."}
-          className="w-full bg-transparent text-sm text-white placeholder:text-slate-500 outline-none border-none"
+          className="min-w-0 flex-1 border-none bg-transparent text-base text-white outline-none placeholder:text-slate-500"
           autoFocus
           autoComplete="off"
           autoCorrect="off"
+          autoCapitalize="none"
           spellCheck="false"
         />
       </div>
 
       {query.trim() && (
-        <div className="mt-2 max-h-[55vh] overflow-y-auto rounded-xl border border-white/10 bg-[#0F1724] p-2">
+        <div className="mt-2 max-h-[55vh] max-h-[55dvh] min-w-0 overflow-x-hidden overflow-y-auto overscroll-contain rounded-xl border border-white/10 bg-[#0F1724] p-2">
           <SearchResults
             query={query}
             results={allMatches}
