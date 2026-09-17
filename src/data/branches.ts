@@ -1,0 +1,43 @@
+import type { Branch } from "@/types/branch";
+
+export const branches: Branch[] = [
+  {
+    id: "main-batha",
+    name: "Main Branch – Batha Riyadh",
+    label: "Main Branch",
+    city: "Riyadh",
+    address: "Ghurabi Electrical Market, Batha, Riyadh",
+    phones: ["0550183813", "0550266902"],
+    mapUrl: "https://maps.google.com/maps?q=24.646150588989258%2C46.72247314453125&z=17&hl=en",
+    coordinates: {
+      lat: 24.646150588989258,
+      lng: 46.72247314453125,
+    },
+  },
+  {
+    id: "al-amal",
+    name: "Branch 2 – Al Amal District",
+    label: "Riyadh Branch",
+    city: "Riyadh",
+    address: "Farazdaq Street, Al Amal District, Riyadh",
+    phones: ["0565825256", "0544694148"],
+    mapUrl: "https://maps.google.com/maps?q=24.64613914489746%2C46.724483489990234&z=17&hl=en",
+    coordinates: {
+      lat: 24.64613914489746,
+      lng: 46.724483489990234,
+    },
+  },
+  {
+    id: "jeddah-aziziyah",
+    name: "Jeddah Branch – Al Aziziyah",
+    label: "Jeddah Branch",
+    city: "Jeddah",
+    address: "Baladiya Street, Al Aziziyah District, Jeddah",
+    phones: ["0569850686"],
+    mapUrl: "https://maps.google.com/maps?q=21.551673889160156%2C39.180973052978516&z=17&hl=en",
+    coordinates: {
+      lat: 21.551673889160156,
+      lng: 39.180973052978516,
+    },
+  },
+];

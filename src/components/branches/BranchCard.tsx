@@ -1,0 +1,75 @@
+import { MapPin, MessageCircle, Phone } from "lucide-react";
+import type { Branch } from "@/types/branch";
+import { normalizePhone, whatsappHref } from "@/lib/phone";
+import { cn } from "@/lib/cn";
+
+interface BranchCardProps {
+  branch: Branch;
+  isSelected?: boolean;
+  onSelect?: (branch: Branch) => void;
+}
+
+export default function BranchCard({ branch, isSelected = false, onSelect }: BranchCardProps) {
+  const isMain = branch.id === "main-batha";
+
+  return (
+    <article
+      onClick={() => onSelect?.(branch)}
+      className={cn(
+        "flex cursor-pointer flex-col justify-between rounded-2xl border border-white/10 bg-[#151E2D] p-5 transition hover:border-[#6993CF]/40 hover:bg-[#182235]",
+        isSelected && "border-[#8A5CC7] bg-[#182235] ring-1 ring-[#8A5CC7]"
+      )}
+    >
+      <div>
+        <span
+          className={cn(
+            "inline-flex rounded-full px-2.5 py-0.5 text-xs font-semibold",
+            isMain ? "bg-[#B6519F]/10 text-[#D68AC8]" : "bg-[#6993CF]/10 text-[#8BB8EF]"
+          )}
+        >
+          {branch.label || branch.city}
+        </span>
+        <h3 className="mt-3 text-lg font-semibold text-white">{branch.name}</h3>
+        <p className="mt-1 text-xs sm:text-sm text-slate-400">{branch.address}</p>
+        <div className="mt-3 flex flex-wrap gap-2 text-xs font-medium text-slate-300">
+          {branch.phones.map((phone) => (
+            <span key={phone} className="rounded bg-white/5 px-2 py-0.5">
+              {phone}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-5 flex flex-wrap items-center gap-2 border-t border-white/10 pt-3">
+        <a
+          href={`tel:${normalizePhone(branch.phones[0])}`}
+          aria-label={`Call ${branch.name}`}
+          onClick={(e) => e.stopPropagation()}
+          className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg border border-white/10 bg-[#1B2638] px-3 text-xs font-medium text-white transition hover:bg-white/10"
+        >
+          <Phone size={14} className="text-[#6993CF]" /> Call
+        </a>
+        {branch.whatsapp ? (
+          <a
+            href={whatsappHref(branch.whatsapp)}
+            target="_blank"
+            rel="noreferrer"
+            onClick={(e) => e.stopPropagation()}
+            className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg bg-[#22C55E] px-3 text-xs font-semibold text-white transition hover:brightness-110"
+          >
+            <MessageCircle size={14} /> WhatsApp
+          </a>
+        ) : null}
+        <a
+          href={branch.mapUrl}
+          target="_blank"
+          rel="noreferrer"
+          onClick={(e) => e.stopPropagation()}
+          className="inline-flex min-h-[40px] items-center gap-1.5 rounded-lg border border-[#6993CF]/40 px-3 text-xs font-medium text-[#8BB8EF] transition hover:bg-[#6993CF]/10"
+        >
+          <MapPin size={14} /> Directions
+        </a>
+      </div>
+    </article>
+  );
+}
