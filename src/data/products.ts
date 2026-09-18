@@ -39,7 +39,7 @@ export const products: Product[] = [
     title: "Conduit Pipe",
     category: "Conduit Pipe",
     mainCategory: "Conduit & Fittings",
-    image: "images/products/product-1.png",
+    image: "/images/images/products/product-1.png",
     description: "Conduit Pipe for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 9,
     variants: [
@@ -96,7 +96,7 @@ export const products: Product[] = [
     title: "EMT Bend",
     category: "EMT Bend",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-10.jpg",
+    image: "/images/products/product-10.png",
     description: "EMT Bend for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -138,7 +138,7 @@ export const products: Product[] = [
     title: "Clamp",
     category: "Clamp",
     mainCategory: "Support Systems",
-    image: "/products/product-16.jpg",
+    image: "/images/products/product-16.png",
     description: "Clamp for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 16,
     variants: [
@@ -230,7 +230,7 @@ export const products: Product[] = [
     title: "Rigid Clamp",
     category: "Rigid Clamp",
     mainCategory: "Support Systems",
-    image: "/products/product-16.jpg",
+    image: "/images/products/product-16.png",
     description: "Rigid Clamp for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 14,
     variants: [
@@ -312,7 +312,7 @@ export const products: Product[] = [
     title: "Rigid Connector",
     category: "Rigid Connector",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-38.jpg",
+    image: "/images/products/product-38.png",
     description: "Rigid Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 7,
     variants: [
@@ -359,7 +359,7 @@ export const products: Product[] = [
     title: "Rigid Coupling",
     category: "Rigid Coupling",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-45.jpg",
+    image: "/images/products/product-45.png",
     description: "Rigid Coupling for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 8,
     variants: [
@@ -411,7 +411,7 @@ export const products: Product[] = [
     title: "Reducer",
     category: "Reducer",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-47.jpg",
+    image: "/images/products/product-47.png",
     description: "Reducer for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -438,7 +438,7 @@ export const products: Product[] = [
     title: "EMT Box",
     category: "EMT Box",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-50.jpg",
+    image: "/images/products/product-50.png",
     description: "EMT Box for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 16,
     variants: [
@@ -530,7 +530,7 @@ export const products: Product[] = [
     title: "Octogonal Box",
     category: "Octogonal Box",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-53.jpg",
+    image: "/images/products/product-53.png",
     description: "Octogonal Box for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -552,7 +552,7 @@ export const products: Product[] = [
     title: "Ring Box",
     category: "Ring Box",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-61.jpg",
+    image: "/images/products/product-61.png",
     description: "Ring Box for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -584,7 +584,7 @@ export const products: Product[] = [
     title: "Water Proof Box",
     category: "Water Proof Box",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-65.jpg",
+    image: "/images/products/product-65.png",
     description: "Water Proof Box for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 12,
     variants: [
@@ -656,7 +656,7 @@ export const products: Product[] = [
     title: "Water Proof Cover",
     category: "Water Proof Cover",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-77.jpg",
+    image: "/images/products/product-77.png",
     description: "Water Proof Cover for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -683,7 +683,7 @@ export const products: Product[] = [
     title: "C-channel",
     category: "C-Channel",
     mainCategory: "Support Systems",
-    image: "/products/product-87.jpg",
+    image: "/images/products/product-87.png",
     description: "C-channel for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -725,7 +725,7 @@ export const products: Product[] = [
     title: "Channel Clamp",
     category: "Channel Clamp",
     mainCategory: "Support Systems",
-    image: "/products/product-93.jpg",
+    image: "/images/products/product-93.png",
     description: "Channel Clamp for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -767,7 +767,7 @@ export const products: Product[] = [
     title: "Thread Rod",
     category: "Thread Rod",
     mainCategory: "Support Systems",
-    image: "/products/product-99.jpg",
+    image: "/images/products/product-99.png",
     description: "Thread Rod for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -794,7 +794,7 @@ export const products: Product[] = [
     title: "Beam Clamp",
     category: "Beam Clamp",
     mainCategory: "Support Systems",
-    image: "/products/product-102.jpg",
+    image: "/images/products/product-102.png",
     description: "Beam Clamp for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -821,7 +821,7 @@ export const products: Product[] = [
     title: "Knock Out Seal",
     category: "Knock Out Seal",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-105.jpg",
+    image: "/images/products/product-105.png",
     description: "Knock Out Seal for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -848,7 +848,7 @@ export const products: Product[] = [
     title: "Insulated Bushing",
     category: "Insulated Bushing",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-108.jpg",
+    image: "/images/products/product-108.png",
     description: "Insulated Bushing for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -890,7 +890,7 @@ export const products: Product[] = [
     title: "Liquid Tight Connector",
     category: "Liquid Tight Connector",
     mainCategory: "Flexible Conduit",
-    image: "/products/product-114.jpg",
+    image: "/images/products/product-114.png",
     description: "Liquid Tight Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 11,
     variants: [
@@ -957,7 +957,7 @@ export const products: Product[] = [
     title: "Flexible Coupling",
     category: "Flexible Coupling",
     mainCategory: "Flexible Conduit",
-    image: "/products/product-123.jpg",
+    image: "/images/products/product-123.png",
     description: "Flexible Coupling for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -979,7 +979,7 @@ export const products: Product[] = [
     title: "Combination Coupling",
     category: "Combination Coupling",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-125.jpg",
+    image: "/images/products/product-125.png",
     description: "Combination Coupling for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -1001,7 +1001,7 @@ export const products: Product[] = [
     title: "Copper Coupling",
     category: "Copper Coupling",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-127.jpg",
+    image: "/images/products/product-127.png",
     description: "High quality COPPER CORNER COUPLING EMT TO EMT 3/4\\\" UL CCC-075 for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -1018,7 +1018,7 @@ export const products: Product[] = [
     title: "Hanger Clamp",
     category: "Hanger Clamp",
     mainCategory: "Support Systems",
-    image: "/products/product-128.jpg",
+    image: "/images/products/product-128.png",
     description: "Hanger Clamp for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -1040,7 +1040,7 @@ export const products: Product[] = [
     title: "Pull Elbow",
     category: "Pull Elbow",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-136.jpg",
+    image: "/images/products/product-136.png",
     description: "Pull Elbow for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 5,
     variants: [
@@ -1077,7 +1077,7 @@ export const products: Product[] = [
     title: "EMT Bender",
     category: "EMT Bender",
     mainCategory: "Tools & Accessories",
-    image: "/products/product-141.jpg",
+    image: "/images/products/product-141.png",
     description: "EMT Bender for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -1109,7 +1109,7 @@ export const products: Product[] = [
     title: "Rigid Bend",
     category: "Rigid Bend",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-145.jpg",
+    image: "/images/products/product-145.png",
     description: "Rigid Bend for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -1141,7 +1141,7 @@ export const products: Product[] = [
     title: "End Cap",
     category: "End Cap",
     mainCategory: "Support Systems",
-    image: "/products/product-149.jpg",
+    image: "/images/products/product-149.png",
     description: "End Cap for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -1163,7 +1163,7 @@ export const products: Product[] = [
     title: "PVC Bender",
     category: "PVC Bender",
     mainCategory: "Tools & Accessories",
-    image: "/products/product-151.jpg",
+    image: "/images/products/product-151.png",
     description: "PVC Bender for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -1190,7 +1190,7 @@ export const products: Product[] = [
     title: "PVC Box",
     category: "PVC Box",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-156.jpg",
+    image: "/images/products/product-156.png",
     description: "High quality PVC BOX 7X7 DEEP for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -1207,7 +1207,7 @@ export const products: Product[] = [
     title: "Pulling Wire",
     category: "Pulling Wire",
     mainCategory: "Cable Management",
-    image: "/products/product-157.jpg",
+    image: "/images/products/product-157.png",
     description: "Pulling Wire for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -1234,7 +1234,7 @@ export const products: Product[] = [
     title: "PVC Adaptor",
     category: "PVC Adaptor",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-160.jpg",
+    image: "/images/products/product-160.png",
     description: "PVC Adaptor for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 8,
     variants: [
@@ -1286,7 +1286,7 @@ export const products: Product[] = [
     title: "PVC Coupling",
     category: "PVC Coupling",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-164.jpg",
+    image: "/images/products/product-164.png",
     description: "PVC Coupling for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -1328,7 +1328,7 @@ export const products: Product[] = [
     title: "PVC Bend",
     category: "PVC Bend",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-174.jpg",
+    image: "/images/products/product-174.png",
     description: "PVC Bend for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -1360,7 +1360,7 @@ export const products: Product[] = [
     title: "PVC Saddle",
     category: "PVC Saddle",
     mainCategory: "Support Systems",
-    image: "/products/product-178.jpg",
+    image: "/images/products/product-178.png",
     description: "High quality PVC SADLLE WITH BASE 25 MM BLACK for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -1377,7 +1377,7 @@ export const products: Product[] = [
     title: "Sub Duct Coupling",
     category: "Sub Duct Coupling",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-179.jpg",
+    image: "/images/products/product-179.png",
     description: "High quality SUB DUCT COUPLING 32 MM FOR FR3 for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -1394,7 +1394,7 @@ export const products: Product[] = [
     title: "Hole Closer",
     category: "Hole Closer",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-182.jpg",
+    image: "/images/products/product-182.png",
     description: "Hole Closer for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -1421,7 +1421,7 @@ export const products: Product[] = [
     title: "Flexible Connector",
     category: "Flexible Connector",
     mainCategory: "Flexible Conduit",
-    image: "/products/product-185.jpg",
+    image: "/images/products/product-185.png",
     description: "Flexible Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 9,
     variants: [
@@ -1478,7 +1478,7 @@ export const products: Product[] = [
     title: "Compression Connector",
     category: "Compression Connector",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-193.jpg",
+    image: "/images/products/product-193.png",
     description: "Compression Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -1505,7 +1505,7 @@ export const products: Product[] = [
     title: "Compression Coupling",
     category: "Compression Coupling",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-196.jpg",
+    image: "/images/products/product-196.png",
     description: "Compression Coupling for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -1532,7 +1532,7 @@ export const products: Product[] = [
     title: "Enlarger",
     category: "Enlarger",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-199.jpg",
+    image: "/images/products/product-199.png",
     description: "Enlarger for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -1559,7 +1559,7 @@ export const products: Product[] = [
     title: "EMT Cover",
     category: "EMT Cover",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-202.jpg",
+    image: "/images/products/product-202.png",
     description: "EMT Cover for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 5,
     variants: [
@@ -1596,7 +1596,7 @@ export const products: Product[] = [
     title: "Plastic Gland",
     category: "Plastic Gland",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-207.jpg",
+    image: "/images/products/product-207.png",
     description: "Plastic Gland for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -1628,7 +1628,7 @@ export const products: Product[] = [
     title: "Insulator",
     category: "Insulator",
     mainCategory: "Grounding",
-    image: "/products/product-211.jpg",
+    image: "/images/products/product-211.png",
     description: "Insulator for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -1655,7 +1655,7 @@ export const products: Product[] = [
     title: "Steel Cable Tie",
     category: "Steel Cable Tie",
     mainCategory: "Cable Management",
-    image: "/products/product-214.jpg",
+    image: "/images/products/product-214.png",
     description: "Steel Cable Tie for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 7,
     variants: [
@@ -1702,7 +1702,7 @@ export const products: Product[] = [
     title: "Cable Marker",
     category: "Cable Marker",
     mainCategory: "Cable Management",
-    image: "/products/product-221.jpg",
+    image: "/images/products/product-221.png",
     description: "Cable Marker for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 12,
     variants: [
@@ -1774,7 +1774,7 @@ export const products: Product[] = [
     title: "Tie Mount",
     category: "Tie Mount",
     mainCategory: "Cable Management",
-    image: "/products/product-225.jpg",
+    image: "/images/products/product-225.png",
     description: "Tie Mount for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -1806,7 +1806,7 @@ export const products: Product[] = [
     title: "Plastic Connector",
     category: "Plastic Connector",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-227.jpg",
+    image: "/images/products/product-227.png",
     description: "Plastic Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -1833,7 +1833,7 @@ export const products: Product[] = [
     title: "Plastic Strip Connector",
     category: "Plastic Strip Connector",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-230.jpg",
+    image: "/images/products/product-230.png",
     description: "Plastic Strip Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -1875,7 +1875,7 @@ export const products: Product[] = [
     title: "Group Holder",
     category: "Group Holder",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-236.jpg",
+    image: "/images/products/product-236.png",
     description: "Group Holder for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -1897,7 +1897,7 @@ export const products: Product[] = [
     title: "End Stopper",
     category: "End Stopper",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-238.jpg",
+    image: "/images/products/product-238.png",
     description: "High quality END STOPPER E/JUK for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -1914,7 +1914,7 @@ export const products: Product[] = [
     title: "Jumber Link",
     category: "Jumber Link",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-239.jpg",
+    image: "/images/products/product-239.png",
     description: "Jumber Link for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -1936,7 +1936,7 @@ export const products: Product[] = [
     title: "Wire Connector",
     category: "Wire Connector",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-241.jpg",
+    image: "/images/products/product-241.png",
     description: "Wire Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -1978,7 +1978,7 @@ export const products: Product[] = [
     title: "Wire Nut",
     category: "Wire Nut",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-247.jpg",
+    image: "/images/products/product-247.png",
     description: "Wire Nut for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -2020,7 +2020,7 @@ export const products: Product[] = [
     title: "Spiral",
     category: "Spiral",
     mainCategory: "Cable Management",
-    image: "/products/product-261.jpg",
+    image: "/images/products/product-261.png",
     description: "Spiral for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 8,
     variants: [
@@ -2072,7 +2072,7 @@ export const products: Product[] = [
     title: "Crimping Tool",
     category: "Crimping Tool",
     mainCategory: "Tools & Accessories",
-    image: "/products/product-269.jpg",
+    image: "/images/products/product-269.png",
     description: "Crimping Tool for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 10,
     variants: [
@@ -2134,7 +2134,7 @@ export const products: Product[] = [
     title: "Wire Stripper",
     category: "Wire Stripper",
     mainCategory: "Tools & Accessories",
-    image: "/products/product-278.jpg",
+    image: "/images/products/product-278.png",
     description: "High quality WIRE STRIPPER HS-D2 for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -2151,7 +2151,7 @@ export const products: Product[] = [
     title: "Hydraulic Crimping Tool",
     category: "Hydraulic Crimping Tool",
     mainCategory: "Tools & Accessories",
-    image: "/products/product-280.jpg",
+    image: "/images/products/product-280.png",
     description: "High quality HYDRUALIC CRIMPING TOOLS 10-300 MM YQK-300 for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -2168,7 +2168,7 @@ export const products: Product[] = [
     title: "Floor Box",
     category: "Floor Box",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-281.jpg",
+    image: "/images/products/product-281.png",
     description: "Floor Box for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -2190,7 +2190,7 @@ export const products: Product[] = [
     title: "DIN Rail",
     category: "DIN Rail",
     mainCategory: "Support Systems",
-    image: "/products/product-283.jpg",
+    image: "/images/products/product-283.png",
     description: "DIN Rail for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -2217,7 +2217,7 @@ export const products: Product[] = [
     title: "Shrink Tube",
     category: "Shrink Tube",
     mainCategory: "Cable Management",
-    image: "/products/product-285.jpg",
+    image: "/images/products/product-285.png",
     description: "Shrink Tube for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 21,
     variants: [
@@ -2334,7 +2334,7 @@ export const products: Product[] = [
     title: "Marking Tube",
     category: "Marking Tube",
     mainCategory: "Cable Management",
-    image: "/products/product-306.jpg",
+    image: "/images/products/product-306.png",
     description: "Marking Tube for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 15,
     variants: [
@@ -2421,7 +2421,7 @@ export const products: Product[] = [
     title: "Earth Rod",
     category: "Earth Rod",
     mainCategory: "Grounding",
-    image: "/products/product-321.jpg",
+    image: "/images/products/product-321.png",
     description: "Earth Rod for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -2453,7 +2453,7 @@ export const products: Product[] = [
     title: "U Bolt Clamp",
     category: "U Bolt Clamp",
     mainCategory: "Support Systems",
-    image: "/products/product-325.jpg",
+    image: "/images/products/product-325.png",
     description: "High quality U BOLT CLAMP CR-705 for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -2470,7 +2470,7 @@ export const products: Product[] = [
     title: "Copper Clamp",
     category: "Copper Clamp",
     mainCategory: "Grounding",
-    image: "/products/product-326.jpg",
+    image: "/images/products/product-326.png",
     description: "Copper Clamp for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -2502,7 +2502,7 @@ export const products: Product[] = [
     title: "Earth Plate",
     category: "Earth Plate",
     mainCategory: "Grounding",
-    image: "/products/product-330.jpg",
+    image: "/images/products/product-330.png",
     description: "High quality COPPER BONDED EARTH PLATE 50X50X3 for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -2519,7 +2519,7 @@ export const products: Product[] = [
     title: "Earth Rod Clamp",
     category: "Earth Rod Clamp",
     mainCategory: "Grounding",
-    image: "/products/product-331.jpg",
+    image: "/images/products/product-331.png",
     description: "Earth Rod Clamp for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -2546,7 +2546,7 @@ export const products: Product[] = [
     title: "Brass Base",
     category: "Brass Base",
     mainCategory: "Grounding",
-    image: "/products/product-334.jpg",
+    image: "/images/products/product-334.png",
     description: "Brass Base for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -2568,7 +2568,7 @@ export const products: Product[] = [
     title: "Neutral Link",
     category: "Neutral Link",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-336.jpg",
+    image: "/images/products/product-336.png",
     description: "High quality NEUTRAL LINK 6 MM (SMALL SIZE) for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -2585,7 +2585,7 @@ export const products: Product[] = [
     title: "EMT Connector",
     category: "EMT Connector",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-337.jpg",
+    image: "/images/products/product-337.png",
     description: "EMT Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 9,
     variants: [
@@ -2642,7 +2642,7 @@ export const products: Product[] = [
     title: "EMT Coupling",
     category: "EMT Coupling",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-346.jpg",
+    image: "/images/products/product-346.png",
     description: "EMT Coupling for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 9,
     variants: [
@@ -2699,7 +2699,7 @@ export const products: Product[] = [
     title: "Zinc Locknut",
     category: "Zinc Locknut",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-362.jpg",
+    image: "/images/products/product-362.png",
     description: "Zinc Locknut for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -2731,7 +2731,7 @@ export const products: Product[] = [
     title: "Chase Nipple",
     category: "Chase Nipple",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-366.jpg",
+    image: "/images/products/product-366.png",
     description: "Chase Nipple for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -2753,7 +2753,7 @@ export const products: Product[] = [
     title: "MCB Breaker Box",
     category: "MCB Breaker Box",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-368.jpg",
+    image: "/images/products/product-368.png",
     description: "MCB Breaker Box for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -2785,7 +2785,7 @@ export const products: Product[] = [
     title: "Angle Bracket",
     category: "Angle Bracket",
     mainCategory: "Support Systems",
-    image: "/products/product-372.jpg",
+    image: "/images/products/product-372.png",
     description: "Angle Bracket for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -2807,7 +2807,7 @@ export const products: Product[] = [
     title: "Base Plate",
     category: "Base Plate",
     mainCategory: "Support Systems",
-    image: "/products/product-374.jpg",
+    image: "/images/products/product-374.png",
     description: "Base Plate for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -2829,7 +2829,7 @@ export const products: Product[] = [
     title: "Cable Lugs",
     category: "Cable Lugs",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-376.jpg",
+    image: "/images/products/product-376.png",
     description: "Cable Lugs for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 50,
     variants: [
@@ -3091,7 +3091,7 @@ export const products: Product[] = [
     title: "Pin Type Lugs",
     category: "Pin Type Lugs",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-417.jpg",
+    image: "/images/products/product-417.png",
     description: "Pin Type Lugs for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 7,
     variants: [
@@ -3138,7 +3138,7 @@ export const products: Product[] = [
     title: "Split Bolt",
     category: "Split Bolt",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-433.jpg",
+    image: "/images/products/product-433.png",
     description: "Split Bolt for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 12,
     variants: [
@@ -3210,7 +3210,7 @@ export const products: Product[] = [
     title: "Aluminium Lugs",
     category: "Aluminium Lugs",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-445.jpg",
+    image: "/images/products/product-445.png",
     description: "Aluminium Lugs for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 10,
     variants: [
@@ -3272,7 +3272,7 @@ export const products: Product[] = [
     title: "Bi Metal Lugs",
     category: "Bi Metal Lugs",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-455.jpg",
+    image: "/images/products/product-455.png",
     description: "Bi Metal Lugs for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 10,
     variants: [
@@ -3334,7 +3334,7 @@ export const products: Product[] = [
     title: "Inline Connector",
     category: "Inline Connector",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-465.jpg",
+    image: "/images/products/product-465.png",
     description: "Inline Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 20,
     variants: [
@@ -3446,7 +3446,7 @@ export const products: Product[] = [
     title: "Copper Ferrule",
     category: "Copper Ferrule",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-485.jpg",
+    image: "/images/products/product-485.png",
     description: "Copper Ferrule for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 17,
     variants: [
@@ -3543,7 +3543,7 @@ export const products: Product[] = [
     title: "Double Ferrule",
     category: "Double Ferrule",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-489.jpg",
+    image: "/images/products/product-489.png",
     description: "Double Ferrule for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -3585,7 +3585,7 @@ export const products: Product[] = [
     title: "Pin Terminal",
     category: "Pin Terminal",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-503.jpg",
+    image: "/images/products/product-503.png",
     description: "Pin Terminal for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -3612,7 +3612,7 @@ export const products: Product[] = [
     title: "Fork Terminal",
     category: "Fork Terminal",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-503.jpg",
+    image: "/images/products/product-503.png",
     description: "Fork Terminal for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -3639,7 +3639,7 @@ export const products: Product[] = [
     title: "Ring Terminal",
     category: "Ring Terminal",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-503.jpg",
+    image: "/images/products/product-503.png",
     description: "Ring Terminal for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 8,
     variants: [
@@ -3691,7 +3691,7 @@ export const products: Product[] = [
     title: "Disconnect Terminal",
     category: "Disconnect Terminal",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-517.jpg",
+    image: "/images/products/product-517.png",
     description: "Disconnect Terminal for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -3733,7 +3733,7 @@ export const products: Product[] = [
     title: "Cable Tie",
     category: "Cable Tie",
     mainCategory: "Cable Management",
-    image: "/products/product-524.jpg",
+    image: "/images/products/product-524.png",
     description: "Cable Tie for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 18,
     variants: [
@@ -3835,7 +3835,7 @@ export const products: Product[] = [
     title: "Spiral Wrapping",
     category: "Spiral Wrapping",
     mainCategory: "Cable Management",
-    image: "/products/product-548.jpg",
+    image: "/images/products/product-548.png",
     description: "Spiral Wrapping for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 5,
     variants: [
@@ -3872,7 +3872,7 @@ export const products: Product[] = [
     title: "Wiring Duct",
     category: "Wiring Duct",
     mainCategory: "Cable Management",
-    image: "/products/product-551.jpg",
+    image: "/images/products/product-551.png",
     description: "Wiring Duct for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 9,
     variants: [
@@ -3929,7 +3929,7 @@ export const products: Product[] = [
     title: "Flexible Conduit",
     category: "Flexible Conduit",
     mainCategory: "Flexible Conduit",
-    image: "/products/product-556.jpg",
+    image: "/images/products/product-556.png",
     description: "Flexible Conduit for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -3971,7 +3971,7 @@ export const products: Product[] = [
     title: "Flexible Conduit Connector",
     category: "Flexible Conduit Connector",
     mainCategory: "Flexible Conduit",
-    image: "/products/product-565.jpg",
+    image: "/images/products/product-565.png",
     description: "Flexible Conduit Connector for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -4013,7 +4013,7 @@ export const products: Product[] = [
     title: "Flexible Conduit Adaptor",
     category: "Flexible Conduit Adaptor",
     mainCategory: "Flexible Conduit",
-    image: "/products/product-565.jpg",
+    image: "/images/products/product-565.png",
     description: "Flexible Conduit Adaptor for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -4055,7 +4055,7 @@ export const products: Product[] = [
     title: "Conduit Saddle",
     category: "Conduit Saddle",
     mainCategory: "Support Systems",
-    image: "/products/product-575.jpg",
+    image: "/images/products/product-575.png",
     description: "Conduit Saddle for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -4097,7 +4097,7 @@ export const products: Product[] = [
     title: "Nylon Gland",
     category: "Nylon Gland",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-583.jpg",
+    image: "/images/products/product-583.png",
     description: "Nylon Gland for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 10,
     variants: [
@@ -4159,7 +4159,7 @@ export const products: Product[] = [
     title: "Metal Gland",
     category: "Metal Gland",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-587.jpg",
+    image: "/images/products/product-587.png",
     description: "Metal Gland for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -4201,7 +4201,7 @@ export const products: Product[] = [
     title: "Brass Locknut",
     category: "Brass Locknut",
     mainCategory: "Conduit & Fittings",
-    image: "/products/product-587.jpg",
+    image: "/images/products/product-587.png",
     description: "Brass Locknut for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -4243,7 +4243,7 @@ export const products: Product[] = [
     title: "Earth Tag",
     category: "Earth Tag",
     mainCategory: "Glands & Lugs",
-    image: "/products/product-608.jpg",
+    image: "/images/products/product-608.png",
     description: "Earth Tag for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 6,
     variants: [
@@ -4285,7 +4285,7 @@ export const products: Product[] = [
     title: "Junction Box",
     category: "Junction Box",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-608.jpg",
+    image: "/images/products/product-608.png",
     description: "Junction Box for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 4,
     variants: [
@@ -4317,7 +4317,7 @@ export const products: Product[] = [
     title: "Weatherproof Switch",
     category: "Weatherproof Switch",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-616.jpg",
+    image: "/images/products/product-616.png",
     description: "Weatherproof Switch for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -4339,7 +4339,7 @@ export const products: Product[] = [
     title: "Weatherproof Socket",
     category: "Weatherproof Socket",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-616.jpg",
+    image: "/images/products/product-616.png",
     description: "Weatherproof Socket for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -4361,7 +4361,7 @@ export const products: Product[] = [
     title: "Industrial Plug",
     category: "Industrial Plug",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-616.jpg",
+    image: "/images/products/product-616.png",
     description: "Industrial Plug for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -4383,7 +4383,7 @@ export const products: Product[] = [
     title: "Industrial Socket",
     category: "Industrial Socket",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-616.jpg",
+    image: "/images/products/product-616.png",
     description: "Industrial Socket for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -4405,7 +4405,7 @@ export const products: Product[] = [
     title: "Panel Lock",
     category: "Panel Lock",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-626.jpg",
+    image: "/images/products/product-626.png",
     description: "High quality PANEL LOCK 22 MM for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4422,7 +4422,7 @@ export const products: Product[] = [
     title: "Panel Hinge",
     category: "Panel Hinge",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-626.jpg",
+    image: "/images/products/product-626.png",
     description: "High quality PANEL HINGE STEEL for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4439,7 +4439,7 @@ export const products: Product[] = [
     title: "DIN Rail Accessories",
     category: "DIN Rail Accessories",
     mainCategory: "Support Systems",
-    image: "/products/product-626.jpg",
+    image: "/images/products/product-626.png",
     description: "High quality END CLAMP FOR DIN RAIL for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4456,7 +4456,7 @@ export const products: Product[] = [
     title: "Terminal Block",
     category: "Terminal Block",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-626.jpg",
+    image: "/images/products/product-626.png",
     description: "Terminal Block for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 5,
     variants: [
@@ -4493,7 +4493,7 @@ export const products: Product[] = [
     title: "Terminal Block Accessories",
     category: "Terminal Block Accessories",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-626.jpg",
+    image: "/images/products/product-626.png",
     description: "Terminal Block Accessories for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -4515,7 +4515,7 @@ export const products: Product[] = [
     title: "Push Button",
     category: "Push Button",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-626.jpg",
+    image: "/images/products/product-626.png",
     description: "Push Button for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -4542,7 +4542,7 @@ export const products: Product[] = [
     title: "Emergency Button",
     category: "Emergency Button",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-638.jpg",
+    image: "/images/products/product-638.png",
     description: "High quality EMERGENCY STOP BUTTON for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4559,7 +4559,7 @@ export const products: Product[] = [
     title: "Selector Switch",
     category: "Selector Switch",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-641.jpg",
+    image: "/images/products/product-641.png",
     description: "Selector Switch for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -4581,7 +4581,7 @@ export const products: Product[] = [
     title: "Pilot Light",
     category: "Pilot Light",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-641.jpg",
+    image: "/images/products/product-641.png",
     description: "Pilot Light for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -4608,7 +4608,7 @@ export const products: Product[] = [
     title: "Digital Timer",
     category: "Digital Timer",
     mainCategory: "Circuit Protection",
-    image: "/products/product-645.jpg",
+    image: "/images/products/product-645.png",
     description: "High quality DIGITAL TIMER 220V for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4625,7 +4625,7 @@ export const products: Product[] = [
     title: "Digital Counter",
     category: "Digital Counter",
     mainCategory: "Circuit Protection",
-    image: "/products/product-645.jpg",
+    image: "/images/products/product-645.png",
     description: "High quality DIGITAL COUNTER 220V for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4642,7 +4642,7 @@ export const products: Product[] = [
     title: "Current Transformer",
     category: "Current Transformer",
     mainCategory: "Circuit Protection",
-    image: "/products/product-645.jpg",
+    image: "/images/products/product-645.png",
     description: "Current Transformer for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -4669,7 +4669,7 @@ export const products: Product[] = [
     title: "Voltmeter",
     category: "Voltmeter",
     mainCategory: "Circuit Protection",
-    image: "/products/product-651.jpg",
+    image: "/images/products/product-651.png",
     description: "High quality ANALOG VOLTMETER 96X96 for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4686,7 +4686,7 @@ export const products: Product[] = [
     title: "Ammeter",
     category: "Ammeter",
     mainCategory: "Circuit Protection",
-    image: "/products/product-651.jpg",
+    image: "/images/products/product-651.png",
     description: "High quality ANALOG AMMETER 96X96 for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4703,7 +4703,7 @@ export const products: Product[] = [
     title: "Digital Meter",
     category: "Digital Meter",
     mainCategory: "Circuit Protection",
-    image: "/products/product-651.jpg",
+    image: "/images/products/product-651.png",
     description: "High quality DIGITAL MULTIFUNCTION METER for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4720,7 +4720,7 @@ export const products: Product[] = [
     title: "Cooling Fan",
     category: "Cooling Fan",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-651.jpg",
+    image: "/images/products/product-651.png",
     description: "Cooling Fan for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -4747,7 +4747,7 @@ export const products: Product[] = [
     title: "Panel Ac",
     category: "Panel AC",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-657.jpg",
+    image: "/images/products/product-657.png",
     description: "Panel Ac for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -4769,7 +4769,7 @@ export const products: Product[] = [
     title: "Panel Heater",
     category: "Panel Heater",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-657.jpg",
+    image: "/images/products/product-657.png",
     description: "Panel Heater for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -4791,7 +4791,7 @@ export const products: Product[] = [
     title: "Thermostat",
     category: "Thermostat",
     mainCategory: "Circuit Protection",
-    image: "/products/product-657.jpg",
+    image: "/images/products/product-657.png",
     description: "Thermostat for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -4813,7 +4813,7 @@ export const products: Product[] = [
     title: "Panel Light",
     category: "Panel Light",
     mainCategory: "Wiring Accessories",
-    image: "/products/product-657.jpg",
+    image: "/images/products/product-657.png",
     description: "High quality LED PANEL LIGHT 24V for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -4830,7 +4830,7 @@ export const products: Product[] = [
     title: "SMPS",
     category: "SMPS",
     mainCategory: "Circuit Protection",
-    image: "/products/product-657.jpg",
+    image: "/images/products/product-657.png",
     description: "SMPS for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -4857,7 +4857,7 @@ export const products: Product[] = [
     title: "Control Transformer",
     category: "Control Transformer",
     mainCategory: "Circuit Protection",
-    image: "/products/product-657.jpg",
+    image: "/images/products/product-657.png",
     description: "Control Transformer for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -4884,7 +4884,7 @@ export const products: Product[] = [
     title: "MCB",
     category: "MCB",
     mainCategory: "Circuit Protection",
-    image: "/products/product-668.jpg",
+    image: "/images/products/product-668.png",
     description: "MCB for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 14,
     variants: [
@@ -4966,7 +4966,7 @@ export const products: Product[] = [
     title: "Contactor",
     category: "Contactor",
     mainCategory: "Circuit Protection",
-    image: "/products/product-679.jpg",
+    image: "/images/products/product-679.png",
     description: "Contactor for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 7,
     variants: [
@@ -5013,7 +5013,7 @@ export const products: Product[] = [
     title: "Thermal Overload Relay",
     category: "Thermal Overload Relay",
     mainCategory: "Circuit Protection",
-    image: "/products/product-690.jpg",
+    image: "/images/products/product-690.png",
     description: "Thermal Overload Relay for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -5040,7 +5040,7 @@ export const products: Product[] = [
     title: "Motor Starter",
     category: "Motor Starter",
     mainCategory: "Circuit Protection",
-    image: "/products/product-690.jpg",
+    image: "/images/products/product-690.png",
     description: "Motor Starter for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -5067,7 +5067,7 @@ export const products: Product[] = [
     title: "Changeover Switch",
     category: "Changeover Switch",
     mainCategory: "Circuit Protection",
-    image: "/products/product-696.jpg",
+    image: "/images/products/product-696.png",
     description: "Changeover Switch for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -5094,7 +5094,7 @@ export const products: Product[] = [
     title: "MCCB",
     category: "MCCB",
     mainCategory: "Circuit Protection",
-    image: "/products/product-696.jpg",
+    image: "/images/products/product-696.png",
     description: "MCCB for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 5,
     variants: [
@@ -5131,7 +5131,7 @@ export const products: Product[] = [
     title: "ACB",
     category: "ACB",
     mainCategory: "Circuit Protection",
-    image: "/products/product-696.jpg",
+    image: "/images/products/product-696.png",
     description: "ACB for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -5153,7 +5153,7 @@ export const products: Product[] = [
     title: "SPD",
     category: "SPD",
     mainCategory: "Circuit Protection",
-    image: "/products/product-707.jpg",
+    image: "/images/products/product-707.png",
     description: "SPD for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -5180,7 +5180,7 @@ export const products: Product[] = [
     title: "Protection Relay",
     category: "Protection Relay",
     mainCategory: "Circuit Protection",
-    image: "/products/product-707.jpg",
+    image: "/images/products/product-707.png",
     description: "Protection Relay for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -5202,7 +5202,7 @@ export const products: Product[] = [
     title: "Relay",
     category: "Relay",
     mainCategory: "Circuit Protection",
-    image: "/products/product-707.jpg",
+    image: "/images/products/product-707.png",
     description: "High quality TIMER RELAY for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -5219,7 +5219,7 @@ export const products: Product[] = [
     title: "Auxiliary Relay",
     category: "Auxiliary Relay",
     mainCategory: "Circuit Protection",
-    image: "/products/product-707.jpg",
+    image: "/images/products/product-707.png",
     description: "Auxiliary Relay for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -5241,7 +5241,7 @@ export const products: Product[] = [
     title: "Relay Socket",
     category: "Relay Socket",
     mainCategory: "Circuit Protection",
-    image: "/products/product-707.jpg",
+    image: "/images/products/product-707.png",
     description: "Relay Socket for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -5263,7 +5263,7 @@ export const products: Product[] = [
     title: "Limit Switch",
     category: "Limit Switch",
     mainCategory: "Circuit Protection",
-    image: "/products/product-707.jpg",
+    image: "/images/products/product-707.png",
     description: "High quality LIMIT SWITCH for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -5280,7 +5280,7 @@ export const products: Product[] = [
     title: "Proximity Sensor",
     category: "Proximity Sensor",
     mainCategory: "Circuit Protection",
-    image: "/products/product-707.jpg",
+    image: "/images/products/product-707.png",
     description: "Proximity Sensor for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -5302,7 +5302,7 @@ export const products: Product[] = [
     title: "Photo Sensor",
     category: "Photo Sensor",
     mainCategory: "Circuit Protection",
-    image: "/products/product-719.jpg",
+    image: "/images/products/product-719.png",
     description: "High quality PHOTO SENSOR for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -5319,7 +5319,7 @@ export const products: Product[] = [
     title: "Float Switch",
     category: "Float Switch",
     mainCategory: "Circuit Protection",
-    image: "/products/product-719.jpg",
+    image: "/images/products/product-719.png",
     description: "High quality FLOAT SWITCH for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -5336,7 +5336,7 @@ export const products: Product[] = [
     title: "Level Controller",
     category: "Level Controller",
     mainCategory: "Circuit Protection",
-    image: "/products/product-719.jpg",
+    image: "/images/products/product-719.png",
     description: "High quality LEVEL CONTROLLER for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -5353,7 +5353,7 @@ export const products: Product[] = [
     title: "VFD",
     category: "VFD",
     mainCategory: "Circuit Protection",
-    image: "/products/product-719.jpg",
+    image: "/images/products/product-719.png",
     description: "VFD for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -5380,7 +5380,7 @@ export const products: Product[] = [
     title: "PLC",
     category: "PLC",
     mainCategory: "Circuit Protection",
-    image: "/products/product-726.jpg",
+    image: "/images/products/product-726.png",
     description: "PLC for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -5402,7 +5402,7 @@ export const products: Product[] = [
     title: "HMI",
     category: "HMI",
     mainCategory: "Circuit Protection",
-    image: "/products/product-726.jpg",
+    image: "/images/products/product-726.png",
     description: "HMI for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -5424,7 +5424,7 @@ export const products: Product[] = [
     title: "Ethernet Switch",
     category: "Ethernet Switch",
     mainCategory: "Cable Management",
-    image: "/products/product-730.jpg",
+    image: "/images/products/product-730.png",
     description: "Ethernet Switch for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [
@@ -5446,7 +5446,7 @@ export const products: Product[] = [
     title: "Network Cabinet",
     category: "Network Cabinet",
     mainCategory: "Boxes & Enclosures",
-    image: "/products/product-731.jpg",
+    image: "/images/products/product-731.png",
     description: "Network Cabinet for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 3,
     variants: [
@@ -5473,7 +5473,7 @@ export const products: Product[] = [
     title: "Patch Panel",
     category: "Patch Panel",
     mainCategory: "Cable Management",
-    image: "/products/product-731.jpg",
+    image: "/images/products/product-731.png",
     description: "High quality PATCH PANEL 24 PORT for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -5490,7 +5490,7 @@ export const products: Product[] = [
     title: "Keystone Jack",
     category: "Keystone Jack",
     mainCategory: "Cable Management",
-    image: "/products/product-736.jpg",
+    image: "/images/products/product-736.png",
     description: "High quality CAT6 KEYSTONE JACK for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -5507,7 +5507,7 @@ export const products: Product[] = [
     title: "RJ45 Connector",
     category: "RJ45 Connector",
     mainCategory: "Cable Management",
-    image: "/products/product-736.jpg",
+    image: "/images/products/product-736.png",
     description: "High quality RJ45 CONNECTOR CAT6 for industrial electrical applications.",
     variantCount: 1,
     variants: [
@@ -5524,7 +5524,7 @@ export const products: Product[] = [
     title: "Testing Equipment",
     category: "Testing Equipment",
     mainCategory: "Tools & Accessories",
-    image: "/products/product-736.jpg",
+    image: "/images/products/product-736.png",
     description: "Testing Equipment for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 5,
     variants: [
@@ -5561,7 +5561,7 @@ export const products: Product[] = [
     title: "Tools",
     category: "Tools",
     mainCategory: "Tools & Accessories",
-    image: "/products/product-743.jpg",
+    image: "/images/products/product-743.png",
     description: "Tools for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 5,
     variants: [
@@ -5598,7 +5598,7 @@ export const products: Product[] = [
     title: "Safety Equipment",
     category: "Safety Equipment",
     mainCategory: "Tools & Accessories",
-    image: "/products/product-747.jpg",
+    image: "/images/products/product-747.png",
     description: "Safety Equipment for wholesale electrical supply, available in multiple sizes and specifications.",
     variantCount: 2,
     variants: [

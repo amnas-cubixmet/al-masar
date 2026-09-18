@@ -17,6 +17,14 @@ export default function ProductCard({
   const variantLabel =
     product.variantCount === 1 ? "1 Variant" : `${product.variantCount} Sizes / Variants`;
 
+  const imageSrc =
+    product.image &&
+    !product.image.startsWith("/") &&
+    !product.image.startsWith("http://") &&
+    !product.image.startsWith("https://")
+      ? `/${product.image}`
+      : product.image;
+
   return (
     <Link
       href={`/products/${product.slug}`}
@@ -29,7 +37,7 @@ export default function ProductCard({
       <div className="relative aspect-square w-full overflow-hidden bg-[#1B2638]">
         {!isDefaultImage ? (
           <Image
-            src={product.image}
+            src={imageSrc}
             alt={product.title}
             fill
             sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, (max-width: 1280px) 25vw, 20vw"

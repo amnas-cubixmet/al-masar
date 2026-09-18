@@ -47,7 +47,13 @@ export default function ProductDetailClient({
             <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-[#1B2638] border border-white/5">
               {product.image && !product.image.includes("default-product") ? (
                 <Image
-                  src={product.image}
+                  src={
+                    product.image.startsWith("/") ||
+                    product.image.startsWith("http://") ||
+                    product.image.startsWith("https://")
+                      ? product.image
+                      : `/${product.image}`
+                  }
                   alt={product.title}
                   fill
                   priority
