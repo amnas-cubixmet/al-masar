@@ -3,9 +3,12 @@ import ProductsHeader from "@/components/products/ProductsHeader";
 import ProductsExplorer from "@/components/products/ProductsExplorer";
 
 export const metadata: Metadata = {
-  title: "Products Catalogue | AL MASAR YELLOW Company",
+  title: "Electrical Products Catalogue | AL MASAR YELLOW",
   description:
-    "Explore AL MASAR YELLOW electrical product catalogue by category, SKU code, brand, and specification.",
+    "Explore AL MASAR YELLOW electrical product catalogue by category, SKU code, brand, and specification across Saudi Arabia.",
+  alternates: {
+    canonical: "/products",
+  },
 };
 
 export default function ProductsPage() {

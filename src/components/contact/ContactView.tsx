@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, Suspense } from "react";
 import ContactHero from "@/components/contact/ContactHero";
 import ContactBranchSelector from "@/components/contact/ContactBranchSelector";
 import SelectedBranchContact from "@/components/contact/SelectedBranchContact";
@@ -35,7 +35,9 @@ export default function ContactView() {
       {/* Enquiry Form Section */}
       <section className="py-14 sm:py-16 lg:py-20 bg-[#101826]">
         <div className="mx-auto w-full max-w-[1440px] px-3 sm:px-6 lg:px-8">
-          <ContactForm branches={branches} selectedBranch={selectedBranch} />
+          <Suspense fallback={<div className="text-[#6993CF]">Loading enquiry form...</div>}>
+            <ContactForm branches={branches} selectedBranch={selectedBranch} />
+          </Suspense>
         </div>
       </section>
 

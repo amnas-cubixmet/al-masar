@@ -1,6 +1,7 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 import { CheckCircle2, MessageCircle, Send } from "lucide-react";
 import Input from "@/components/ui/Input";
 import Textarea from "@/components/ui/Textarea";
@@ -8,6 +9,7 @@ import Select from "@/components/ui/Select";
 import Button from "@/components/ui/Button";
 import type { Branch } from "@/types/branch";
 import { whatsappHref } from "@/lib/phone";
+import { products } from "@/data/products";
 
 interface ContactFormProps {
   branches: Branch[];
@@ -15,6 +17,8 @@ interface ContactFormProps {
 }
 
 export default function ContactForm({ branches, selectedBranch }: ContactFormProps) {
+  const searchParams = useSearchParams();
+
   const [formData, setFormData] = useState({
     name: "",
     mobile: "",
@@ -24,6 +28,31 @@ export default function ContactForm({ branches, selectedBranch }: ContactFormPro
     product: "",
     message: "",
   });
+
+  useEffect(() => {
+    const productSlug = searchParams.get("product");
+    const variantCode = searchParams.get("variant");
+
+    if (productSlug) {
+      const foundProduct = products.find(
+        (p) => p.slug === productSlug || p.title.toLowerCase() === productSlug.toLowerCase()
+      );
+      const productTitle = foundProduct ? foundProduct.title : productSlug;
+
+      let initialText = productTitle;
+      if (variantCode) {
+        initialText = `${productTitle} — ${variantCode}`;
+      }
+
+      setFormData((prev) => {
+        // Do not overwrite user-entered data if user has already typed something
+        if (!prev.product) {
+          return { ...prev, product: initialText };
+        }
+        return prev;
+      });
+    }
+  }, [searchParams]);
 
   const [submitted, setSubmitted] = useState(false);
 
@@ -104,6 +133,7 @@ Message: ${formData.message || "I would like product pricing and availability in
             <Input
               label="Full Name *"
               required
+              autoComplete="name"
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               placeholder="e.g. Ahmed Al-Ghamdi"
@@ -112,6 +142,7 @@ Message: ${formData.message || "I would like product pricing and availability in
               label="Mobile Number *"
               required
               type="tel"
+              autoComplete="tel"
               value={formData.mobile}
               onChange={(e) => setFormData({ ...formData, mobile: e.target.value })}
               placeholder="05X XXX XXXX"
@@ -122,12 +153,14 @@ Message: ${formData.message || "I would like product pricing and availability in
             <Input
               label="Email Address"
               type="email"
+              autoComplete="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               placeholder="name@company.com"
             />
             <Input
               label="Company Name"
+              autoComplete="organization"
               value={formData.companyName}
               onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
               placeholder="e.g. Al Masar Contracting"

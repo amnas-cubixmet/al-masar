@@ -6,9 +6,12 @@ import RegisteredAddress from "@/components/about/RegisteredAddress";
 import AboutCTA from "@/components/about/AboutCTA";
 
 export const metadata: Metadata = {
-  title: "About | AL MASAR YELLOW Company",
+  title: "About AL MASAR YELLOW | Electrical Materials Company",
   description:
-    "Product-led electrical materials company in Saudi Arabia offering digital catalogue discovery, company credentials, and branch access.",
+    "Learn about AL MASAR YELLOW, a leading electrical materials supplier in Saudi Arabia offering product discovery, quality credentials, and extensive branch support.",
+  alternates: {
+    canonical: "/about",
+  },
 };
 
 export default function AboutPage() {

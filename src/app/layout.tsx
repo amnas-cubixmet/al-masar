@@ -8,13 +8,26 @@ import Footer from "@/components/layout/Footer";
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://almasaryellow.com";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: {
-    default: "AL MASAR YELLOW | Electrical Materials",
+    default: "AL MASAR YELLOW | Electrical Materials Supplier Saudi Arabia",
     template: "%s | AL MASAR YELLOW",
   },
   description:
-    "Explore AL MASAR YELLOW electrical materials, product categories, branch locations and contact options across Saudi Arabia.",
+    "AL MASAR YELLOW supplies electrical materials, conduits, fittings, cable management, circuit protection and related products across Saudi Arabia.",
+  alternates: {
+    canonical: "./",
+  },
+  openGraph: {
+    title: "AL MASAR YELLOW | Electrical Materials Supplier Saudi Arabia",
+    description:
+      "AL MASAR YELLOW supplies electrical materials, conduits, fittings, cable management, circuit protection and related products across Saudi Arabia.",
+    siteName: "AL MASAR YELLOW Company",
+    type: "website",
+  },
 };
 
 export const viewport: Viewport = {

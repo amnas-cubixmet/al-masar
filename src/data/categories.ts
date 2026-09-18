@@ -1,96 +1,108 @@
-import type { ProductCategory } from "@/types/product";
-import { products } from "@/data/products";
+import { products, type MainCategory } from "./products";
 
-const baseCategories: Array<Omit<ProductCategory, "productCount">> = [
+export interface Category {
+  id: string;
+  slug: string;
+  name: MainCategory;
+  shortLabel?: string;
+  image: string;
+  productCount: number;
+}
+
+const categoryMeta: Array<Omit<Category, "id" | "productCount">> = [
   {
-    id: "conduit-fittings",
-    name: "Conduit & Fittings",
     slug: "conduit-fittings",
-    shortLabel: "Conduit",
+    name: "Conduit & Fittings",
     image: "/images/categories/conduit-fittings.png",
   },
   {
-    id: "boxes-enclosures",
-    name: "Boxes & Enclosures",
     slug: "boxes-enclosures",
-    shortLabel: "Boxes",
+    name: "Boxes & Enclosures",
     image: "/images/categories/boxes-enclosures.png",
   },
   {
-    id: "cable-management",
-    name: "Cable Management",
     slug: "cable-management",
-    shortLabel: "Cable",
+    name: "Cable Management",
     image: "/images/categories/cable-management.png",
   },
   {
-    id: "glands-lugs",
-    name: "Glands & Lugs",
     slug: "glands-lugs",
-    shortLabel: "Glands",
+    name: "Glands & Lugs",
     image: "/images/categories/glands-lugs.png",
   },
   {
-    id: "circuit-protection",
-    name: "Circuit Protection",
     slug: "circuit-protection",
-    shortLabel: "Circuit",
+    name: "Circuit Protection",
     image: "/images/categories/circuit-protection.png",
   },
   {
-    id: "wiring-accessories",
-    name: "Wiring Accessories",
     slug: "wiring-accessories",
-    shortLabel: "Wiring",
+    name: "Wiring Accessories",
     image: "/images/categories/wiring-accessories.png",
   },
   {
-    id: "flexible-conduit",
-    name: "Flexible Conduit",
     slug: "flexible-conduit",
-    shortLabel: "Flexible",
+    name: "Flexible Conduit",
     image: "/images/categories/flexible-conduit.png",
   },
   {
-    id: "tools-accessories",
-    name: "Tools & Accessories",
     slug: "tools-accessories",
-    shortLabel: "Tools",
+    name: "Tools & Accessories",
     image: "/images/categories/tools-accessories.png",
   },
   {
-    id: "support-systems",
-    name: "Support Systems",
     slug: "support-systems",
-    shortLabel: "Support",
+    name: "Support Systems",
     image: "/images/categories/support-systems.png",
   },
   {
-    id: "grounding",
-    name: "Grounding",
     slug: "grounding",
-    shortLabel: "Grounding",
+    name: "Grounding",
     image: "/images/categories/grounding.png",
   },
 ];
 
-const defaultCounts: Record<string, number> = {
-  "conduit-fittings": 125,
-  "boxes-enclosures": 90,
-  "cable-management": 84,
-  "glands-lugs": 72,
-  "circuit-protection": 68,
-  "wiring-accessories": 96,
-  "flexible-conduit": 54,
-  "tools-accessories": 62,
-  "support-systems": 51,
-  grounding: 47,
-};
+const countByMainCategory = products.reduce<Record<MainCategory, number>>(
+  (acc, product) => {
+    acc[product.mainCategory] = (acc[product.mainCategory] ?? 0) + 1;
+    return acc;
+  },
+  {
+    "Conduit & Fittings": 0,
+    "Boxes & Enclosures": 0,
+    "Cable Management": 0,
+    "Glands & Lugs": 0,
+    "Circuit Protection": 0,
+    "Wiring Accessories": 0,
+    "Flexible Conduit": 0,
+    "Tools & Accessories": 0,
+    "Support Systems": 0,
+    Grounding: 0,
+  }
+);
 
-export const categories: ProductCategory[] = baseCategories.map((cat) => {
-  const realCount = products.filter((product) => product.categorySlug === cat.slug).length;
-  return {
-    ...cat,
-    productCount: realCount > 0 ? realCount : (defaultCounts[cat.slug] ?? 25),
-  };
-});
+export const categories: Category[] = categoryMeta.map((category) => ({
+  id: category.slug,
+  ...category,
+  productCount: countByMainCategory[category.name],
+}));
+
+export const categoryBySlug = Object.fromEntries(
+  categories.map((category) => [category.slug, category])
+) as Record<string, Category>;
+
+export function getCategoryBySlug(slug: string) {
+  return categoryBySlug[slug];
+}
+
+export function getProductsByCategorySlug(slug: string) {
+  const category = getCategoryBySlug(slug);
+
+  if (!category) {
+    return [];
+  }
+
+  return products.filter(
+    (product) => product.mainCategory === category.name
+  );
+}

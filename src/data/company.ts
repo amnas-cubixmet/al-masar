@@ -5,5 +5,8 @@ export const company = {
   vatNumber: "314234843600003",
   registeredAddress:
     "Building 7789, Al Farazdaq Street, Al Amal District, Riyadh 12644, Saudi Arabia",
-  catalogueCount: 749,
+  totalProductFamilies: 153,
+  totalProductVariants: 749,
+  catalogueCount: 153,
 };
+

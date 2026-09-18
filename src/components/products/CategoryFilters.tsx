@@ -18,7 +18,7 @@ export default function CategoryFilters({
 
   return (
     <div
-      className="flex gap-2 overflow-x-auto pb-1 scrollbar-none sm:flex-wrap sm:overflow-visible"
+      className="flex gap-2 overflow-x-auto scroll-smooth snap-x pb-1 scrollbar-none sm:flex-wrap sm:overflow-visible"
       aria-label="Product categories filter"
     >
       {allCategories.map((cat) => {

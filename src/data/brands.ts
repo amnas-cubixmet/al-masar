@@ -1,57 +1,130 @@
-export type Brand = {
-  id: string;
+export interface Brand {
+  id: number;
   name: string;
-  logo?: string;
-  placeholderText?: string;
-};
+  logo: string;
+  category: string;
+  description: string;
+  country: string;
+}
 
 export const brands: Brand[] = [
   {
-    id: "brand-01",
+    id: 1,
     name: "Schneider Electric",
-    placeholderText: "BRAND 01",
-    logo: "/images/brands/schneider.png",
+    logo: "/images/brands/schneider-electric.png",
+    category: "Power Distribution",
+    description:
+      "Global leader in energy management and industrial automation solutions.",
+    country: "France",
   },
+
   {
-    id: "brand-02",
-    name: "ABB Industrial",
-    placeholderText: "BRAND 02",
-    logo: "/images/brands/abb.png",
-  },
-  {
-    id: "brand-03",
-    name: "Legrand",
-    placeholderText: "BRAND 03",
-    logo: "/images/brands/legrand.png",
-  },
-  {
-    id: "brand-04",
-    name: "Eaton Power",
-    placeholderText: "BRAND 04",
-    logo: "/images/brands/eaton.png",
-  },
-  {
-    id: "brand-05",
+    id: 2,
     name: "Siemens",
-    placeholderText: "BRAND 05",
     logo: "/images/brands/siemens.png",
+    category: "Industrial Automation",
+    description:
+      "Advanced industrial technology and electrical engineering solutions.",
+    country: "Germany",
   },
+
   {
-    id: "brand-06",
-    name: "Furse Grounding",
-    placeholderText: "BRAND 06",
-    logo: "/images/brands/furse.png",
+    id: 3,
+    name: "ABB",
+    logo: "/images/brands/abb.png",
+    category: "Electrical Components",
+    description:
+      "Innovative electrical and automation technologies for industries.",
+    country: "Switzerland",
   },
+
   {
-    id: "brand-07",
-    name: "CMP Tech",
-    placeholderText: "BRAND 07",
-    logo: "/images/brands/cmp.png",
+    id: 4,
+    name: "Legrand",
+    logo: "/images/brands/legrand.png",
+    category: "Electrical Infrastructure",
+    description:
+      "Premium electrical systems and cable management solutions.",
+    country: "France",
   },
+
   {
-    id: "brand-08",
-    name: "Unistrut",
-    placeholderText: "BRAND 08",
-    logo: "/images/brands/unistrut.png",
+    id: 5,
+    name: "Eaton",
+    logo: "/images/brands/eaton.png",
+    category: "Power Management",
+    description:
+      "Reliable power management and industrial electrical products.",
+    country: "USA",
+  },
+
+  {
+    id: 6,
+    name: "Phoenix Contact",
+    logo: "/images/brands/phoenix-contact.png",
+    category: "Terminal Blocks",
+    description:
+      "High-quality industrial connection and automation technologies.",
+    country: "Germany",
+  },
+
+  {
+    id: 7,
+    name: "Rittal",
+    logo: "/images/brands/rittal.png",
+    category: "Enclosures",
+    description:
+      "Premium industrial enclosures and thermal management systems.",
+    country: "Germany",
+  },
+
+  {
+    id: 8,
+    name: "LS Electric",
+    logo: "/images/brands/ls-electric.png",
+    category: "Industrial Power",
+    description:
+      "Industrial automation and electrical power distribution solutions.",
+    country: "South Korea",
+  },
+
+  {
+    id: 9,
+    name: "Alfanar",
+    logo: "/images/brands/alfanar.png",
+    category: "Electrical Manufacturing",
+    description:
+      "Saudi-based electrical manufacturing and energy solutions provider.",
+    country: "Saudi Arabia",
+  },
+
+  {
+    id: 10,
+    name: "Hager",
+    logo: "/images/brands/hager.png",
+    category: "Electrical Systems",
+    description:
+      "Modern electrical installation and energy distribution products.",
+    country: "Germany",
+  },
+
+  {
+    id: 11,
+    name: "Weidmüller",
+    logo: "/images/brands/weidmuller.png",
+    category: "Industrial Connectivity",
+    description:
+      "Reliable industrial connectivity and interface solutions.",
+    country: "Germany",
+  },
+
+  {
+    id: 12,
+    name: "Omron",
+    logo: "/images/brands/omron.png",
+    category: "Control Components",
+    description:
+      "Industrial automation and smart sensing technologies.",
+    country: "Japan",
   },
 ];

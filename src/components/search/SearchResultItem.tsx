@@ -59,7 +59,7 @@ export default function SearchResultItem({
       <div className="relative h-11 w-11 sm:h-12 sm:w-12 shrink-0 overflow-hidden rounded-lg bg-white/5 p-1">
         <Image
           src={product.image || "/images/products/default-product.svg"}
-          alt={product.name}
+          alt={product.title}
           width={48}
           height={48}
           className="h-full w-full object-contain"
@@ -69,13 +69,11 @@ export default function SearchResultItem({
       <div className="flex flex-1 flex-col gap-0.5 min-w-0">
         <div className="flex items-center justify-between gap-2">
           <h4 className="line-clamp-2 text-xs sm:text-sm font-semibold leading-tight text-white">
-            <HighlightText text={product.name} query={query} />
+            <HighlightText text={product.title} query={query} />
           </h4>
-          {product.code && (
-            <span className="shrink-0 rounded bg-[#6993CF]/10 px-1.5 py-0.5 font-mono text-[10px] font-bold text-[#6993CF] border border-[#6993CF]/20" dir="ltr">
-              {product.code}
-            </span>
-          )}
+          <span className="shrink-0 rounded bg-[#6993CF]/10 px-1.5 py-0.5 font-mono text-[10px] font-bold text-[#6993CF] border border-[#6993CF]/20">
+            {product.variantCount} {product.variantCount === 1 ? "Variant" : "Variants"}
+          </span>
         </div>
 
         <div className="flex items-center justify-between text-[11px] text-slate-400">

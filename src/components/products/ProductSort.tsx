@@ -27,8 +27,8 @@ export default function ProductSort({ value, onChange }: ProductSortProps) {
         <option value="name-desc" className="bg-[#151E2D] text-white">
           Sort: Name Z–A
         </option>
-        <option value="newest" className="bg-[#151E2D] text-white">
-          Sort: Newest
+        <option value="most-variants" className="bg-[#151E2D] text-white">
+          Sort: Most Variants
         </option>
       </select>
     </div>
