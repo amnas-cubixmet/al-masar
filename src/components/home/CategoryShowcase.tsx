@@ -1,5 +1,3 @@
-import CategorySlider from "@/components/products/CategorySlider";
+import CategoryShowcase from "@/components/categories/CategoryShowcase";
 
-export default function CategoryShowcase() {
-  return <CategorySlider />;
-}
+export default CategoryShowcase;

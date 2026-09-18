@@ -1,31 +1,37 @@
-export type SpecificationItem = { label: string; value: string };
+import type { MainCategory, ProductVariant, Product as DataProduct } from "@/data/products";
 
-export type Product = {
+export type { MainCategory, ProductVariant };
+
+export interface Product {
   id: string;
   slug: string;
-  name: string;
-  code?: string;
+  title: string;
   category: string;
-  categorySlug: string;
-  brand?: string;
+  mainCategory: MainCategory;
   image: string;
+  description: string;
+  variantCount: number;
+  variants: ProductVariant[];
+
+  // Optional backward-compatibility fields for legacy UI components
+  name?: string;
+  code?: string;
+  categorySlug?: string;
+  brand?: string;
   shortDescription?: string;
-  description?: string;
-  specifications?: SpecificationItem[];
+  specifications?: Array<{ label: string; value: string }>;
   keywords?: string[];
   tags?: string[];
   price?: number;
   featured?: boolean;
-};
+}
 
 export type ProductCategory = {
   id: string;
   name: string;
   slug: string;
-  shortLabel: string;
+  shortLabel?: string;
   image: string;
   productCount: number;
   description?: string;
 };
-
-

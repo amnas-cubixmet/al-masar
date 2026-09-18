@@ -4,11 +4,7 @@ import ProductGrid from "@/components/products/ProductGrid";
 import { products } from "@/data/products";
 
 export default function FeaturedProducts() {
-  const featured = (
-    products.filter((product) => product.featured).length >= 10
-      ? products.filter((product) => product.featured)
-      : products
-  ).slice(0, 10);
+  const featured = products.slice(0, 10);
 
   return (
     <section className="py-14 sm:py-16 lg:py-20">

@@ -44,7 +44,7 @@ export default function AboutPreview() {
           />
           <CompanyStatCard
             label="CATALOGUE"
-            value={`${company.catalogueCount}+ Items`}
+            value={`${company.totalProductFamilies} Product Families (${company.totalProductVariants} Variants)`}
             icon={Boxes}
           />
         </div>

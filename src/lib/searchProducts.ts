@@ -1,39 +1,26 @@
-import type { Product } from "@/types/product";
+import type { Product } from "@/data/products";
 
 /**
  * Reusable utility function to search product catalog data.
- * Searches product name, product code (SKU), category, brand, keywords/tags, and specifications.
+ * Matches product title, category, mainCategory, description, and variant title / code.
+ * Always returns parent product families (no individual variant cards).
  */
 export function searchProducts(products: Product[], query: string): Product[] {
   const trimmed = query.trim().toLowerCase();
   if (!trimmed) return [];
 
-  // Split query into terms for multi-word matching (e.g. "cable gland", "3/4 emt")
   const searchTerms = trimmed.split(/\s+/).filter(Boolean);
 
   return products.filter((product) => {
-    // Extract searchable specification values
-    const specTexts: string[] = [];
-    if (Array.isArray(product.specifications)) {
-      product.specifications.forEach((spec) => {
-        if (typeof spec === "string") {
-          specTexts.push(spec);
-        } else if (spec && typeof spec === "object") {
-          specTexts.push(spec.label || "", spec.value || "");
-        }
-      });
-    }
+    // Collect text from variants (titles and SKU codes)
+    const variantTexts = product.variants.flatMap((v) => [v.code, v.title]);
 
     const searchableBlob = [
-      product.name,
-      product.code || "",
+      product.title,
       product.category,
-      product.brand || "",
-      product.shortDescription || "",
-      product.description || "",
-      ...(product.keywords || []),
-      ...(product.tags || []),
-      ...specTexts,
+      product.mainCategory,
+      product.description,
+      ...variantTexts,
     ]
       .join(" ")
       .toLowerCase();

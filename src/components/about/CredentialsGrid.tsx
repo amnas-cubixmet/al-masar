@@ -23,7 +23,7 @@ export default function CredentialsGrid() {
     },
     {
       label: "CATALOGUE",
-      value: `${company.catalogueCount}+ Listed Items`,
+      value: `${company.totalProductFamilies} Product Families (${company.totalProductVariants} Catalogue Variants)`,
       icon: Boxes,
     },
   ];

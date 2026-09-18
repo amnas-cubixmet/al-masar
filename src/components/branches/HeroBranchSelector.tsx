@@ -4,7 +4,11 @@ import { useState, useRef, useEffect } from "react";
 import { MapPin, ChevronDown, Check } from "lucide-react";
 import { useBranch } from "@/context/BranchContext";
 
-export default function HeroBranchSelector() {
+interface HeroBranchSelectorProps {
+  mounted?: boolean;
+}
+
+export default function HeroBranchSelector({ mounted = true }: HeroBranchSelectorProps) {
   const { branch: selectedBranch, branches, setBranchId } = useBranch();
   const [isOpen, setIsOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -26,7 +30,10 @@ export default function HeroBranchSelector() {
   return (
     <div
       ref={containerRef}
-      className="relative mt-6 w-full lg:absolute lg:bottom-8 lg:right-8 lg:mt-0 lg:w-[280px] z-20"
+      className={`relative w-full z-20 transition-all duration-500 ease-out ${
+        mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+      }`}
+      style={{ transitionDelay: "2050ms" }}
     >
       {/* Custom Dropdown Menu (Opens Above) */}
       {isOpen && (
@@ -79,26 +86,51 @@ export default function HeroBranchSelector() {
       >
         <div className="flex items-center justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
-            <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#6993CF]/20 bg-[#6993CF]/10 text-[#7BA9E6]">
+            <div
+              className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-[#6993CF]/20 bg-[#6993CF]/10 text-[#7BA9E6] transition-all duration-400 ease-out ${
+                mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+              }`}
+              style={{ transitionDelay: "2100ms" }}
+            >
               <MapPin size={18} />
             </div>
             <div className="min-w-0 flex-1">
-              <span className="block text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7BA9E6]">
+              {/* Step 8: SELECT BRANCH Label */}
+              <span
+                className={`block text-[10px] font-semibold uppercase tracking-[0.18em] text-[#7BA9E6] transition-all duration-400 ease-out ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                }`}
+                style={{ transitionDelay: "2150ms" }}
+              >
                 SELECT BRANCH
               </span>
-              <p className="text-sm font-semibold text-white truncate leading-snug mt-0.5">
+              {/* Step 9: Branch Name */}
+              <p
+                className={`text-sm font-semibold text-white truncate leading-snug mt-0.5 transition-all duration-400 ease-out ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                }`}
+                style={{ transitionDelay: "2300ms" }}
+              >
                 {selectedBranch.name}
               </p>
-              <p className="text-xs text-slate-400 truncate mt-0.5">
+              {/* Step 10: Branch Address */}
+              <p
+                className={`text-xs text-slate-400 truncate mt-0.5 transition-all duration-400 ease-out ${
+                  mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"
+                }`}
+                style={{ transitionDelay: "2450ms" }}
+              >
                 {selectedBranch.address}
               </p>
             </div>
           </div>
+          {/* Step 11: Branch Dropdown Icon */}
           <ChevronDown
             size={18}
-            className={`shrink-0 text-slate-400 transition-transform duration-200 ${
+            className={`shrink-0 text-slate-400 transition-all duration-400 ease-out ${
               isOpen ? "rotate-180 text-white" : ""
-            }`}
+            } ${mounted ? "opacity-100 translate-y-0" : "opacity-0 translate-y-2"}`}
+            style={{ transitionDelay: "2600ms" }}
           />
         </div>
       </button>

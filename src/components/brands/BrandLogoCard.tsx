@@ -28,7 +28,7 @@ export default function BrandLogoCard({ brand, isDuplicate = false }: BrandLogoC
         />
       ) : (
         <span className="text-center text-[10px] font-semibold uppercase tracking-[0.14em] text-slate-500">
-          {brand.placeholderText || brand.name}
+          {brand.name}
         </span>
       )}
     </div>

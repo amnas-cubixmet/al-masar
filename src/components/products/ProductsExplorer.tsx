@@ -8,8 +8,9 @@ import ProductSort from "@/components/products/ProductSort";
 import ProductGrid from "@/components/products/ProductGrid";
 import ProductsEmptyState from "@/components/products/ProductsEmptyState";
 import LoadMoreProducts from "@/components/products/LoadMoreProducts";
-import { categories } from "@/data/categories";
+import { categories, getCategoryBySlug } from "@/data/categories";
 import { products } from "@/data/products";
+import { searchProducts } from "@/lib/searchProducts";
 
 const BATCH_SIZE = 24;
 
@@ -46,33 +47,28 @@ function ProductsExplorerContent() {
 
   // Filter & Sort Logic
   const filteredProducts = useMemo(() => {
-    const value = query.trim().toLowerCase();
-    let result = products.filter((product) => {
-      const categoryMatch = category === "all" || product.categorySlug === category;
-      const searchMatch =
-        !value ||
-        [
-          product.name,
-          product.code || "",
-          product.category,
-          product.brand || "",
-          ...(product.keywords || []),
-          ...(product.tags || []),
-          ...(product.specifications || []).map((s) => `${s.label} ${s.value}`),
-        ]
-          .join(" ")
-          .toLowerCase()
-          .includes(value);
+    let result = products;
 
-      return categoryMatch && searchMatch;
-    });
+    // Filter by Category
+    if (category !== "all") {
+      const catObj = getCategoryBySlug(category);
+      if (catObj) {
+        result = result.filter((product) => product.mainCategory === catObj.name);
+      }
+    }
 
+    // Filter by Search Query (Product title, category, mainCategory, description, variant code/title)
+    if (query.trim()) {
+      result = searchProducts(result, query);
+    }
+
+    // Sort Options
     if (sort === "name-asc") {
-      result = [...result].sort((a, b) => a.name.localeCompare(b.name));
+      result = [...result].sort((a, b) => a.title.localeCompare(b.title));
     } else if (sort === "name-desc") {
-      result = [...result].sort((a, b) => b.name.localeCompare(a.name));
-    } else if (sort === "newest") {
-      result = [...result].sort((a, b) => Number(b.id) - Number(a.id));
+      result = [...result].sort((a, b) => b.title.localeCompare(a.title));
+    } else if (sort === "most-variants") {
+      result = [...result].sort((a, b) => b.variantCount - a.variantCount);
     }
 
     return result;
@@ -109,13 +105,14 @@ function ProductsExplorerContent() {
         <p className="text-xs font-semibold text-slate-400 sm:text-sm">
           {category !== "all" ? (
             <>
-              Showing <span className="text-white">{filteredProducts.length}</span> products in{" "}
+              Showing <span className="text-white">{filteredProducts.length}</span> Products in{" "}
               <span className="text-[#6993CF]">{categoryName}</span>
             </>
           ) : (
             <>
               Showing <span className="text-white">{Math.min(visibleCount, filteredProducts.length)}</span> of{" "}
-              <span className="text-white">{filteredProducts.length}</span> products
+              <span className="text-white">{filteredProducts.length}</span> Products
+              <span className="ml-2 text-slate-500 font-normal">(749 available variants)</span>
             </>
           )}
         </p>
