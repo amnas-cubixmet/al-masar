@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import Hero from "@/components/home/Hero";
+import HeroFall from "@/components/home/HeroFall";
 import CategorySection from "@/components/home/CategorySection";
 import FeaturedProducts from "@/components/home/FeaturedProducts";
 import BrandsMarquee from "@/components/brands/BrandsMarquee";
@@ -39,8 +39,8 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HomeScrollAnimations>
-        {/* 1 — CLEAN FULL-SCREEN HERO */}
-        <Hero />
+        {/* 1 — HERO FALL */}
+        <HeroFall />
 
         {/* 2 — CATEGORY SECTION */}
         <CategorySection />
