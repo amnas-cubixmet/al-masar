@@ -38,12 +38,8 @@ export default function HeroProductLoop() {
     ).matches;
 
     if (reducedMotion) {
-      gsap.set(cards, {
-        autoAlpha: 0,
-      });
-      gsap.set(cards[0], {
-        autoAlpha: 1,
-      });
+      gsap.set(cards, { autoAlpha: 0 });
+      gsap.set(cards[0], { autoAlpha: 1 });
 
       return () => {
         gsap.set(cards, {
@@ -113,15 +109,6 @@ export default function HeroProductLoop() {
       ref={wrapRef}
       className="relative flex h-full w-full items-center justify-center"
     >
-      <div
-        className="pointer-events-none absolute left-1/2 top-1/2 h-[230px] w-[230px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#1B2554]/35 blur-[1px] sm:h-[300px] sm:w-[300px] lg:h-[410px] lg:w-[410px]"
-        aria-hidden="true"
-      />
-      <div
-        className="pointer-events-none absolute left-[54%] top-[48%] h-[150px] w-[150px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[#283A87]/24 sm:h-[205px] sm:w-[205px] lg:h-[280px] lg:w-[280px]"
-        aria-hidden="true"
-      />
-
       <div className="relative h-[250px] w-full max-w-[330px] sm:h-[330px] sm:max-w-[430px] lg:h-[470px] lg:max-w-[560px]">
         {loopProducts.map((product, index) => {
           const title =
@@ -172,11 +159,6 @@ export default function HeroProductLoop() {
           );
         })}
       </div>
-
-      <div
-        className="pointer-events-none absolute bottom-[8%] left-1/2 h-[8px] w-[42%] -translate-x-1/2 rounded-full bg-[#202A5A]/55 blur-[0.2px] sm:h-[10px] lg:bottom-[7%] lg:w-[46%]"
-        aria-hidden="true"
-      />
     </div>
   );
 }
