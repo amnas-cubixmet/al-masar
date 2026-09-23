@@ -82,7 +82,7 @@ export default function Hero() {
               className="inline-flex h-11 items-center justify-center gap-1.5 rounded-lg sm:h-[60px] sm:gap-2 sm:rounded-xl bg-gradient-to-r from-[#6EA8FF] via-[#8A63E8] to-[#C45BCB] hover:brightness-110 px-3 text-[12px] sm:px-9 sm:text-[16px] font-bold text-white shadow-lg shadow-[#8A63E8]/25 transition-transform hover:-translate-y-0.5 active:translate-y-0"
             >
               <span>{t.viewProducts}</span>
-              <span className="text-lg font-bold">{isArabic ? "←" : "→"}</span>
+              <span className="text-lg font-bold">{isArabic ? "←" : " "}</span>
             </Link>
 
             {/* Secondary CTA */}

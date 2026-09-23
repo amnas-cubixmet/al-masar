@@ -42,7 +42,7 @@ export default function QuickContact({ branches }: QuickContactProps) {
             className="inline-flex h-10 items-center justify-center gap-1.5 rounded-lg sm:h-11 sm:justify-start sm:gap-2 sm:rounded-xl bg-gradient-to-r from-[#6EA8FF] via-[#8A63E8] to-[#C45BCB] px-3 text-[10px] sm:px-5 sm:text-xs font-bold text-white shadow-lg transition hover:brightness-110"
           >
             <MessageCircle className="h-4 w-4" />
-            <span>{isArabic ? "المحادثة عبر الواتساب ←" : "Chat on WhatsApp →"}</span>
+            <span>{isArabic ? "المحادثة عبر الواتساب ←" : "Chat on WhatsApp  "}</span>
           </a>
 
           <a
@@ -50,7 +50,7 @@ export default function QuickContact({ branches }: QuickContactProps) {
             className="inline-flex h-10 items-center justify-center gap-1.5 rounded-lg sm:h-11 sm:justify-start sm:gap-2 sm:rounded-xl border border-white/10 bg-white/5 px-3 text-[10px] sm:px-5 sm:text-xs font-bold text-white transition hover:bg-white/10"
           >
             <Phone className="h-4 w-4 text-[#6EA8FF]" />
-            <span>{isArabic ? "اتصل بنا ←" : "Call Us →"}</span>
+            <span>{isArabic ? "اتصل بنا ←" : "Call Us  "}</span>
           </a>
         </div>
       </div>

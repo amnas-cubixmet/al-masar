@@ -37,7 +37,7 @@ export default function FinalContactCTA({ branches }: FinalContactCTAProps) {
             href="#contact-form-section"
             className="inline-flex h-10 w-full min-h-[40px] sm:h-12 sm:w-auto sm:min-h-[48px] items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#6EA8FF] via-[#8A63E8] to-[#C45BCB] px-3 text-[10px] sm:px-7 sm:text-sm font-bold text-white shadow-lg shadow-[#8A63E8]/20 transition hover:brightness-110"
           >
-            <span>{isArabic ? "طلب عرض سعر ←" : "Request a Quote →"}</span>
+            <span>{isArabic ? "طلب عرض سعر ←" : "Request a Quote  "}</span>
             <Send className="h-4 w-4" />
           </a>
 

@@ -18,10 +18,10 @@ export default function Header() {
 
   const quoteHref = branch.whatsapp
     ? `https://wa.me/${branch.whatsapp.replace(/[^\d]/g, "")}?text=${encodeURIComponent(
-        isArabic
-          ? "مرحباً، أود الحصول على عرض سعر من شركة المسار."
-          : "Hello, I would like to request a quote from AL MASAR."
-      )}`
+      isArabic
+        ? "مرحباً، أود الحصول على عرض سعر من شركة المسار."
+        : "Hello, I would like to request a quote from AL MASAR."
+    )}`
     : "/contact";
 
   return (
@@ -91,7 +91,7 @@ export default function Header() {
             "
           >
             {isArabic ? "طلب عرض" : "GET A QUOTE"}
-            <span className="ml-1.5 text-sm font-bold">→</span>
+            <span className="ml-1.5 text-sm font-bold"> </span>
           </a>
 
           {/* Mobile Menu Button */}

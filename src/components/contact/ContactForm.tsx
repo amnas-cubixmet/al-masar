@@ -282,8 +282,8 @@ Requirements: ${formData.message || "Requesting quotation and material availabil
                   {fileName
                     ? fileName
                     : isArabic
-                    ? "اختر ملفاً (PDF, XLSX, DOCX, JPG, PNG)"
-                    : "Attach BOQ file (PDF, XLSX, DOCX, JPG, PNG)"}
+                      ? "اختر ملفاً (PDF, XLSX, DOCX, JPG, PNG)"
+                      : "Attach BOQ file (PDF, XLSX, DOCX, JPG, PNG)"}
                 </span>
               </label>
             </div>
@@ -311,7 +311,7 @@ Requirements: ${formData.message || "Requesting quotation and material availabil
               disabled={!formData.agreed}
               className="group inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#6EA8FF] via-[#8A63E8] to-[#C45BCB] px-8 text-sm font-bold text-white shadow-lg shadow-[#8A63E8]/20 transition-all duration-300 hover:-translate-y-0.5 hover:brightness-110 disabled:opacity-50"
             >
-              <span>{isArabic ? "إرسال الاستفسار ←" : "Send Enquiry →"}</span>
+              <span>{isArabic ? "إرسال الاستفسار ←" : "Send Enquiry  "}</span>
               <Send className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1 rtl:group-hover:-translate-x-1" />
             </button>
           </div>

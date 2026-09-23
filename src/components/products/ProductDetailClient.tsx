@@ -59,8 +59,8 @@ export default function ProductDetailClient({
                 <Image
                   src={
                     product.image.startsWith("/") ||
-                    product.image.startsWith("http://") ||
-                    product.image.startsWith("https://")
+                      product.image.startsWith("http://") ||
+                      product.image.startsWith("https://")
                       ? product.image
                       : `/${product.image}`
                   }
@@ -133,7 +133,7 @@ export default function ProductDetailClient({
                   className="inline-flex h-10 w-full min-h-[40px] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#6EA8FF] via-[#8A63E8] to-[#C45BCB] px-4 text-[12px] font-bold text-white transition hover:brightness-110 sm:h-12 sm:min-h-[44px] sm:rounded-xl sm:px-6 sm:text-sm sm:shadow-lg sm:shadow-[#8A63E8]/20"
                 >
                   <MessageCircle className="h-3.5 w-3.5 sm:h-4 sm:w-4" />
-                  <span>{isArabic ? "طلب تسعيرة لهذا المنتج" : "Request a Quote →"}</span>
+                  <span>{isArabic ? "طلب تسعيرة لهذا المنتج" : "Request a Quote  "}</span>
                 </Link>
               </div>
             </div>
@@ -175,11 +175,10 @@ export default function ProductDetailClient({
                     <tr
                       key={variant.id}
                       onClick={() => setSelectedVariant(variant)}
-                      className={`cursor-pointer transition ${
-                        isSelected
+                      className={`cursor-pointer transition ${isSelected
                           ? "bg-[#8A63E8]/15 font-semibold text-white"
                           : "hover:bg-white/5 text-[#AAB4C3]"
-                      }`}
+                        }`}
                     >
                       <td className="py-3.5 px-4 text-center">
                         <input
@@ -211,11 +210,10 @@ export default function ProductDetailClient({
                 <div
                   key={variant.id}
                   onClick={() => setSelectedVariant(variant)}
-                  className={`flex min-w-0 cursor-pointer items-start gap-2 rounded-lg border p-2.5 transition ${
-                    isSelected
+                  className={`flex min-w-0 cursor-pointer items-start gap-2 rounded-lg border p-2.5 transition ${isSelected
                       ? "border-[#6EA8FF] bg-[#6EA8FF]/10 text-white"
                       : "border-white/10 bg-[#07111F] text-[#AAB4C3]"
-                  }`}
+                    }`}
                 >
                   <input
                     type="radio"

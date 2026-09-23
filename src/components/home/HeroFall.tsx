@@ -58,7 +58,7 @@ export default function HeroFall() {
               className="inline-flex h-11 min-w-[132px] items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-[#6F86FF] to-[#8993FF] px-5 text-[11px] font-bold text-white shadow-[0_10px_30px_rgba(111,134,255,0.16)] transition duration-300 hover:-translate-y-0.5 hover:brightness-110 active:translate-y-0 sm:h-12 sm:min-w-[150px] sm:px-6 sm:text-[12px]"
             >
               <span>{t.viewProducts}</span>
-              <span aria-hidden="true">{isArabic ? "←" : "→"}</span>
+              <span aria-hidden="true">{isArabic ? "←" : " "}</span>
             </Link>
 
             <Link
