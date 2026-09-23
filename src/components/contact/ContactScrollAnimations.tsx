@@ -1,6 +1,6 @@
 "use client";
 
-import { useLayoutEffect, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { gsap, refreshScrollTrigger } from "@/lib/gsapClient";
 import { useLanguage } from "@/context/LanguageContext";
 import { useIntro } from "@/context/IntroContext";
@@ -14,17 +14,23 @@ export default function ContactScrollAnimations({ children }: ContactScrollAnima
   const { isArabic } = useLanguage();
   const { introComplete } = useIntro();
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (!containerRef.current || !introComplete) return;
 
-    // Check for reduced motion preference
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      return;
-    }
+    let cleanupAnimations: (() => void) | undefined;
+    let secondFrame = 0;
 
-    const mm = gsap.matchMedia();
+    const firstFrame = window.requestAnimationFrame(() => {
+      secondFrame = window.requestAnimationFrame(() => {
 
-    const ctx = gsap.context(() => {
+        // Start GSAP only after hydration has fully committed.
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+          return;
+        }
+
+        const mm = gsap.matchMedia();
+
+        const ctx = gsap.context(() => {
       // DESKTOP ANIMATIONS (fine pointer desktop)
       mm.add("(min-width: 900px) and (hover: hover) and (pointer: fine)", () => {
         // 1. Hero Reveal (pill, heading, desc)
@@ -331,11 +337,19 @@ export default function ContactScrollAnimations({ children }: ContactScrollAnima
           );
         }
       });
-    }, containerRef);
+        }, containerRef);
+
+        cleanupAnimations = () => {
+          mm.revert();
+          ctx.revert();
+        };
+      });
+    });
 
     return () => {
-      mm.revert();
-      ctx.revert();
+      window.cancelAnimationFrame(firstFrame);
+      if (secondFrame) window.cancelAnimationFrame(secondFrame);
+      cleanupAnimations?.();
     };
   }, [isArabic, introComplete]);
 
