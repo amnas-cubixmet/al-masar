@@ -9,6 +9,8 @@ import MobileSearch from "@/components/search/MobileSearch";
 import LanguageSelector from "@/components/language/LanguageSelector";
 import { useLanguage } from "@/context/LanguageContext";
 import { useBranch } from "@/context/BranchContext";
+import { company } from "@/data/company";
+import { whatsappHref } from "@/lib/phone";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,13 +18,7 @@ export default function Header() {
   const { isArabic } = useLanguage();
   const { branch } = useBranch();
 
-  const quoteHref = branch.whatsapp
-    ? `https://wa.me/${branch.whatsapp.replace(/[^\d]/g, "")}?text=${encodeURIComponent(
-        isArabic
-          ? "مرحباً، أود الحصول على عرض سعر من شركة المسار."
-          : "Hello, I would like to request a quote from AL MASAR."
-      )}`
-    : "/contact";
+  const quoteHref = whatsappHref(company.quoteWhatsapp, company.quoteMessage);
 
   return (
     <header className="sticky top-0 z-50 h-[72px] border-b border-white/5 bg-[#07111F]/90 backdrop-blur-md transition-all">
@@ -79,8 +75,8 @@ export default function Header() {
 
           <a
             href={quoteHref}
-            target={branch.whatsapp ? "_blank" : "_self"}
-            rel={branch.whatsapp ? "noopener noreferrer" : undefined}
+            target="_blank"
+            rel="noopener noreferrer"
             className="hidden h-[40px] items-center justify-center rounded-xl bg-gradient-to-r from-[#6EA8FF] via-[#8A63E8] to-[#C45BCB] px-5 text-[13px] font-bold text-white shadow-lg shadow-[#8A63E8]/20 transition-all hover:-translate-y-0.5 hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#8A63E8] sm:inline-flex"
           >
             {isArabic ? "طلب عرض" : "GET A QUOTE"}
