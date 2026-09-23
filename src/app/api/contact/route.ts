@@ -61,7 +61,8 @@ export async function POST(request: Request) {
       );
     }
 
-    const phoneNumber = `${countryCode} ${mobile}`.trim();
+    const localMobile = mobile.replace(/[^0-9]/g, "").replace(/^0+/, "");
+    const phoneNumber = `${countryCode} ${localMobile}`.trim();
     const attachmentFiles = formData
       .getAll("attachments")
       .filter((item): item is File => item instanceof File && item.size > 0);
