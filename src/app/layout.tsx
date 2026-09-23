@@ -4,6 +4,7 @@ import "./globals.css";
 import AppProviders from "@/components/providers/AppProviders";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
+import FloatingQuoteButton from "@/components/layout/FloatingQuoteButton";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter", display: "swap" });
 const manrope = Manrope({ subsets: ["latin"], variable: "--font-manrope", display: "swap" });
@@ -68,6 +69,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <AppProviders>
           <Header />
           <main className="min-w-0 overflow-x-hidden">{children}</main>
+          <FloatingQuoteButton />
           <Footer />
         </AppProviders>
       </body>
