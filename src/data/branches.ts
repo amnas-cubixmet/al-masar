@@ -4,9 +4,13 @@ export const branches: Branch[] = [
   {
     id: "main-batha",
     name: "Main Branch – Batha Riyadh",
+    nameAr: "الفرع الرئيسي – البطحاء، الرياض",
     label: "Main Branch",
+    labelAr: "الفرع الرئيسي",
     city: "Riyadh",
+    cityAr: "الرياض",
     address: "Ghurabi Electrical Market, Batha, Riyadh",
+    addressAr: "سوق الغرابي للكهرباء، البطحاء، الرياض",
     phones: ["0550183813", "0550266902"],
     mapUrl: "https://maps.google.com/maps?q=24.646150588989258%2C46.72247314453125&z=17&hl=en",
     coordinates: {
@@ -17,9 +21,13 @@ export const branches: Branch[] = [
   {
     id: "al-amal",
     name: "Branch 2 – Al Amal District",
+    nameAr: "الفرع الثاني – حي الأمل",
     label: "Riyadh Branch",
+    labelAr: "فرع الرياض",
     city: "Riyadh",
+    cityAr: "الرياض",
     address: "Farazdaq Street, Al Amal District, Riyadh",
+    addressAr: "شارع الفرزدق، حي الأمل، الرياض",
     phones: ["0565825256", "0544694148"],
     mapUrl: "https://maps.google.com/maps?q=24.64613914489746%2C46.724483489990234&z=17&hl=en",
     coordinates: {
@@ -30,9 +38,13 @@ export const branches: Branch[] = [
   {
     id: "jeddah-aziziyah",
     name: "Jeddah Branch – Al Aziziyah",
+    nameAr: "فرع جدة – العزيزية",
     label: "Jeddah Branch",
+    labelAr: "فرع جدة",
     city: "Jeddah",
+    cityAr: "جدة",
     address: "Baladiya Street, Al Aziziyah District, Jeddah",
+    addressAr: "شارع البلدية، حي العزيزية، جدة",
     phones: ["0569850686"],
     mapUrl: "https://maps.google.com/maps?q=21.551673889160156%2C39.180973052978516&z=17&hl=en",
     coordinates: {
