@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactView from "@/components/contact/ContactView";
 import { branches } from "@/data/branches";
+import { company } from "@/data/company";
 
 export const metadata: Metadata = {
   title: "Contact AL MASAR | Electrical Material Enquiries & Quotations",
@@ -10,7 +11,6 @@ export const metadata: Metadata = {
     canonical: "/contact",
   },
 };
-
 
 export default function ContactPage() {
   const jsonLd = {
@@ -29,12 +29,16 @@ export default function ContactPage() {
           addressCountry: "SA",
         },
         telephone: branch.phones[0],
-        geo: {
-          "@type": "GeoCoordinates",
-          latitude: branch.coordinates.lat,
-          longitude: branch.coordinates.lng,
-        },
-        url: "https://almasaryellow.com/contact",
+        ...(branch.coordinates
+          ? {
+              geo: {
+                "@type": "GeoCoordinates",
+                latitude: branch.coordinates.lat,
+                longitude: branch.coordinates.lng,
+              },
+            }
+          : {}),
+        url: `${company.website}/contact`,
       },
     })),
   };
