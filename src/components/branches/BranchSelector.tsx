@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import { Check, ChevronDown, MapPin } from "lucide-react";
 import type { Branch } from "@/types/branch";
+import { useLanguage } from "@/context/LanguageContext";
 import { cn } from "@/lib/cn";
 
 interface BranchSelectorProps {
@@ -18,6 +19,7 @@ export default function BranchSelector({
 }: BranchSelectorProps) {
   const [open, setOpen] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
+  const { isArabic } = useLanguage();
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -29,20 +31,30 @@ export default function BranchSelector({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  const branchName = (branch: Branch) =>
+    isArabic && branch.nameAr ? branch.nameAr : branch.name;
+
   return (
     <div ref={containerRef} className="relative w-full max-w-md">
       <button
         type="button"
         onClick={() => setOpen((prev) => !prev)}
-        className="inline-flex h-10 w-full items-center justify-between gap-2.5 rounded-lg border border-white/10 bg-[#151E2D] px-3 text-[12px] font-medium text-white sm:h-11 sm:gap-3 sm:rounded-xl sm:px-4 sm:text-sm transition hover:border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6993CF]/50"
+        aria-expanded={open}
+        className={cn(
+          "inline-flex h-10 w-full items-center justify-between gap-2.5 rounded-lg border border-white/10 bg-[#151E2D] px-3 text-[12px] font-medium text-white transition hover:border-white/20 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#6993CF]/50 sm:h-11 sm:gap-3 sm:rounded-xl sm:px-4 sm:text-sm",
+          isArabic ? "text-right" : "text-left"
+        )}
       >
-        <div className="flex items-center gap-2.5 min-w-0">
+        <div className="flex min-w-0 items-center gap-2.5">
           <MapPin size={14} className="shrink-0 text-[#6993CF]" />
-          <span className="truncate">{selectedBranch.name}</span>
+          <span className="truncate">{branchName(selectedBranch)}</span>
         </div>
         <ChevronDown
           size={14}
-          className={cn("shrink-0 text-slate-400 transition-transform duration-200", open && "rotate-180")}
+          className={cn(
+            "shrink-0 text-slate-400 transition-transform duration-200",
+            open && "rotate-180"
+          )}
         />
       </button>
 
@@ -60,12 +72,13 @@ export default function BranchSelector({
                 }}
                 className={cn(
                   "flex w-full items-center justify-between rounded-lg px-3 py-2.5 text-sm transition hover:bg-white/5 hover:text-white",
+                  isArabic ? "text-right" : "text-left",
                   isSelected
-                    ? "bg-[#6993CF]/10 text-[#8BB8EF] font-semibold"
+                    ? "bg-[#6993CF]/10 font-semibold text-[#8BB8EF]"
                     : "text-slate-300"
                 )}
               >
-                <span className="truncate">{item.name}</span>
+                <span className="truncate">{branchName(item)}</span>
                 {isSelected && <Check size={14} className="shrink-0 text-[#8BB8EF]" />}
               </button>
             );
