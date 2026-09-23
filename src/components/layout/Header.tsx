@@ -8,7 +8,6 @@ import MobileNav from "./MobileNav";
 import MobileSearch from "@/components/search/MobileSearch";
 import LanguageSelector from "@/components/language/LanguageSelector";
 import { useLanguage } from "@/context/LanguageContext";
-import { useBranch } from "@/context/BranchContext";
 import { company } from "@/data/company";
 import { whatsappHref } from "@/lib/phone";
 
@@ -16,7 +15,6 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const { isArabic } = useLanguage();
-  const { branch } = useBranch();
 
   const quoteHref = whatsappHref(company.quoteWhatsapp, company.quoteMessage);
 
