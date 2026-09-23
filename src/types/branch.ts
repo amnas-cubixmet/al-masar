@@ -11,7 +11,7 @@ export type Branch = {
   phones: string[];
   whatsapp?: string;
   mapUrl: string;
-  coordinates: {
+  coordinates?: {
     lat: number;
     lng: number;
   };
