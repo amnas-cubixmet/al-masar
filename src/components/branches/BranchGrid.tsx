@@ -1,4 +1,7 @@
+"use client";
+
 import type { Branch } from "@/types/branch";
+import { useLanguage } from "@/context/LanguageContext";
 import BranchCard from "./BranchCard";
 
 interface BranchGridProps {
@@ -8,9 +11,13 @@ interface BranchGridProps {
 }
 
 export default function BranchGrid({ branches, selectedBranch, onSelectBranch }: BranchGridProps) {
+  const { isArabic } = useLanguage();
+
   return (
     <div className="mt-6 sm:mt-12">
-      <h3 className="text-[16px] font-bold text-white sm:text-2xl">All Locations</h3>
+      <h3 className="text-[16px] font-bold text-white sm:text-2xl">
+        {isArabic ? "جميع المواقع" : "All Locations"}
+      </h3>
       <div className="mt-3 grid gap-2.5 sm:mt-4 sm:grid-cols-2 sm:gap-4 lg:grid-cols-3">
         {branches.map((item) => (
           <BranchCard
