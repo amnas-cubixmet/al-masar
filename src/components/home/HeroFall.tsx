@@ -14,7 +14,18 @@ export default function HeroFall() {
       data-section="hero"
       className="relative isolate min-h-[88svh] w-full overflow-hidden bg-[#070D1A] text-white sm:min-h-[94svh] lg:min-h-[100svh]"
     >
-      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_72%_46%,rgba(89,103,255,0.035),transparent_34%)]" />
+      {/* Reference-style background */}
+      <div className="pointer-events-none absolute inset-0 z-0" aria-hidden="true">
+        <div className="absolute right-[-8%] top-[9%] h-[245px] w-[245px] rounded-full bg-[#151C3D]/58 sm:right-[-2%] sm:top-[8%] sm:h-[330px] sm:w-[330px] lg:right-[-1%] lg:top-[10%] lg:h-[455px] lg:w-[455px]" />
+
+        <div className="absolute right-[8%] top-[30%] h-[205px] w-[205px] rounded-full bg-[#202D66]/72 sm:right-[12%] sm:top-[27%] sm:h-[275px] sm:w-[275px] lg:right-[10%] lg:top-[27%] lg:h-[360px] lg:w-[360px]" />
+
+        <div className="absolute bottom-[2%] right-[35%] h-[150px] w-[150px] rounded-full bg-[#182859]/72 sm:bottom-[1%] sm:right-[38%] sm:h-[210px] sm:w-[210px] lg:bottom-[1%] lg:right-[31%] lg:h-[275px] lg:w-[275px]" />
+
+        <div className="absolute bottom-[14%] right-[11%] h-[10px] w-[38%] rounded-full bg-[#1B234C]/82 sm:bottom-[13%] sm:right-[10%] sm:h-[13px] sm:w-[40%] lg:bottom-[15%] lg:right-[9%] lg:h-[15px] lg:w-[34%]" />
+
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_46%,rgba(89,103,255,0.025),transparent_36%)]" />
+      </div>
 
       <div className="relative z-10 mx-auto grid min-h-[88svh] w-full max-w-[1680px] grid-cols-1 items-center px-5 pb-10 pt-[104px] sm:min-h-[94svh] sm:px-10 sm:pb-12 sm:pt-[112px] lg:min-h-[100svh] lg:grid-cols-[minmax(0,0.92fr)_minmax(420px,0.78fr)] lg:gap-8 lg:px-[6vw] lg:pb-10 lg:pt-[110px] xl:gap-12 xl:px-[7vw]">
         <div className="hero-content-wrapper relative z-20 flex w-full max-w-[760px] flex-col justify-center lg:pr-8">
@@ -61,7 +72,7 @@ export default function HeroFall() {
           <div className="hero-stats hidden" aria-hidden="true" />
         </div>
 
-        <div className="relative z-10 mt-7 h-[285px] w-full sm:mt-9 sm:h-[365px] lg:mt-0 lg:h-[560px]">
+        <div className="relative z-20 mt-7 h-[285px] w-full sm:mt-9 sm:h-[365px] lg:mt-0 lg:h-[560px]">
           <HeroProductLoop />
         </div>
       </div>
