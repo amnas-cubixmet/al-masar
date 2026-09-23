@@ -11,10 +11,15 @@ export default function BranchMap({ branch }: { branch: Branch }) {
   const [showFallback, setShowFallback] = useState(false);
 
   const mapSrc = useMemo(() => {
-    const { lat, lng } = branch.coordinates;
     const language = isArabic ? "ar" : "en";
-    return `https://www.google.com/maps?q=${lat},${lng}&z=17&output=embed&hl=${language}`;
-  }, [branch.coordinates, isArabic]);
+    const query = branch.coordinates
+      ? `${branch.coordinates.lat},${branch.coordinates.lng}`
+      : isArabic && branch.addressAr
+        ? branch.addressAr
+        : branch.address;
+
+    return `https://www.google.com/maps?q=${encodeURIComponent(query)}&z=17&output=embed&hl=${language}`;
+  }, [branch.address, branch.addressAr, branch.coordinates, isArabic]);
 
   useEffect(() => {
     setLoaded(false);
