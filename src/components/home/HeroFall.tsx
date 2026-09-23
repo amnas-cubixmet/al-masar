@@ -49,7 +49,7 @@ export default function HeroFall() {
               </span>
             </span>
             <span className="block overflow-hidden">
-              <span className="hero-title-line-2 block bg-gradient-to-r from-[#8EA0FF] via-[#8D7CFF] to-[#7C6CF2] bg-clip-text text-transparent">
+              <span className="hero-title-line-2 block bg-gradient-to-r from-[#6EA8FF] via-[#8A63E8] to-[#C45BCB] bg-clip-text text-transparent">
                 {t.headlineGradient}
               </span>
             </span>
