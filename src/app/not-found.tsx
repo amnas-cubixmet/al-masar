@@ -1,6 +1,39 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import Container from "@/components/ui/Container";
 import { ArrowLeft, Search } from "lucide-react";
+
+const notFoundTitle = "Page Not Found | AL MASAR YELLOW";
+const notFoundDescription = "The page you requested is not available on the AL MASAR YELLOW website.";
+
+export const metadata: Metadata = {
+  title: { absolute: notFoundTitle },
+  description: notFoundDescription,
+  robots: {
+    index: false,
+    follow: true,
+  },
+  openGraph: {
+    title: notFoundTitle,
+    description: notFoundDescription,
+    siteName: "AL MASAR YELLOW",
+    type: "website",
+    images: [
+      {
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: notFoundTitle,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: notFoundTitle,
+    description: notFoundDescription,
+    images: ["/opengraph-image"],
+  },
+};
 
 export default function NotFound() {
   return (

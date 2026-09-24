@@ -1,8 +1,9 @@
 import type { MetadataRoute } from "next";
 import { products } from "@/data/products";
+import { siteUrl } from "@/lib/seo";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://almasaryellow.com";
+  const baseUrl = siteUrl;
 
   const staticRoutes: MetadataRoute.Sitemap = [
     {

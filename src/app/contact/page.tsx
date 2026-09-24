@@ -1,16 +1,14 @@
-import type { Metadata } from "next";
 import ContactView from "@/components/contact/ContactView";
 import { branches } from "@/data/branches";
-import { company } from "@/data/company";
+import { absoluteUrl, pageMetadata, serializeJsonLd } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact AL MASAR | Electrical Material Enquiries & Quotations",
+export const metadata = pageMetadata({
+  title: "Contact AL MASAR YELLOW | Quotations & Branch Locations",
   description:
-    "Get in touch with AL MASAR for electrical material enquiries, BOQ quotations, product availability, and branch locations across Saudi Arabia.",
-  alternates: {
-    canonical: "/contact",
-  },
-};
+    "Request a quotation from AL MASAR YELLOW or visit our electrical supply branches in Riyadh, Jeddah and Qassim. Call, WhatsApp or send an enquiry.",
+  path: "/contact",
+  image: "/opengraph-image",
+});
 
 export default function ContactPage() {
   const jsonLd = {
@@ -38,7 +36,7 @@ export default function ContactPage() {
               },
             }
           : {}),
-        url: `${company.website}/contact`,
+        url: absoluteUrl("/contact"),
       },
     })),
   };
@@ -47,7 +45,7 @@ export default function ContactPage() {
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(jsonLd) }}
       />
       <ContactView />
     </>

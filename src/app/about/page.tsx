@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import AboutHero from "@/components/about/AboutHero";
 import CompanyOverview from "@/components/about/CompanyOverview";
 import AboutStats from "@/components/about/AboutStats";
@@ -9,15 +8,15 @@ import WhyChooseAbout from "@/components/about/WhyChooseAbout";
 import BrandsMarquee from "@/components/brands/BrandsMarquee";
 import AboutCTA from "@/components/about/AboutCTA";
 import AboutScrollAnimations from "@/components/about/AboutScrollAnimations";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About AL MASAR | Electrical Materials Supplier Saudi Arabia",
+export const metadata = pageMetadata({
+  title: "About AL MASAR YELLOW | Electrical Supplier in Saudi Arabia",
   description:
-    "Learn about AL MASAR, a leading electrical materials supplier in Saudi Arabia offering certified products, project procurement solutions, and nation-wide distribution.",
-  alternates: {
-    canonical: "/about",
-  },
-};
+    "AL MASAR YELLOW supplies electrical materials across Saudi Arabia, with project procurement support and branches in Riyadh, Jeddah and Qassim.",
+  path: "/about",
+  image: "/opengraph-image",
+});
 
 export default function AboutPage() {
   return (

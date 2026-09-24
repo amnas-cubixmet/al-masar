@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { products } from "@/data/products";
 import ProductDetailClient from "@/components/products/ProductDetailClient";
+import { absoluteUrl, pageMetadata, serializeJsonLd, siteName } from "@/lib/seo";
 
 export function generateStaticParams() {
   return products.map((product) => ({ slug: product.slug }));
@@ -14,24 +15,25 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const product = products.find((item) => item.slug === slug);
-  if (!product) return { title: "Product | AL MASAR YELLOW" };
+  if (!product) {
+    return {
+      ...pageMetadata({
+        title: `Product Not Found | ${siteName}`,
+        description: "This electrical product is not available in the AL MASAR YELLOW catalogue.",
+        path: `/products/${slug}`,
+      }),
+      robots: { index: false, follow: true },
+    };
+  }
 
-  const title = `${product.title} | AL MASAR YELLOW`;
-  const description = `${product.title} available from AL MASAR YELLOW with multiple sizes and specifications for wholesale electrical supply.`;
+  const title = `${product.title} | ${siteName}`;
+  const description = `${product.description.replace(/\.$/, "")}. Wholesale supply from AL MASAR YELLOW across Saudi Arabia.`;
 
-  return {
+  return pageMetadata({
     title,
     description,
-    alternates: {
-      canonical: `/products/${product.slug}`,
-    },
-    openGraph: {
-      title,
-      description,
-      type: "article",
-      images: product.image ? [{ url: product.image }] : [],
-    },
-  };
+    path: `/products/${product.slug}`,
+  });
 }
 
 export default async function ProductDetailPage({
@@ -52,6 +54,7 @@ export default async function ProductDetailPage({
 
   const defaultVariant = product.variants[0];
 
+  const productUrl = absoluteUrl(`/products/${product.slug}`);
   const productJsonLd = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -59,14 +62,19 @@ export default async function ProductDetailPage({
     description: product.description,
     sku: defaultVariant ? defaultVariant.code : product.id,
     category: product.mainCategory,
-    image: product.image ? [product.image] : [],
+    url: productUrl,
+    image: product.image ? [absoluteUrl(product.image)] : [],
+    brand: {
+      "@type": "Brand",
+      name: siteName,
+    },
   };
 
   return (
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: serializeJsonLd(productJsonLd) }}
       />
       <ProductDetailClient
         product={product}

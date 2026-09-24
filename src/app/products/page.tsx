@@ -1,14 +1,13 @@
-import type { Metadata } from "next";
 import ProductsExplorer from "@/components/products/ProductsExplorer";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Electrical Products Catalogue | AL MASAR",
+export const metadata = pageMetadata({
+  title: "Electrical Products Catalogue | AL MASAR YELLOW",
   description:
-    "Explore AL MASAR's comprehensive range of electrical materials, accessories, and project-supply solutions across Saudi Arabia and the GCC.",
-  alternates: {
-    canonical: "/products",
-  },
-};
+    "Browse EMT conduit, fittings, boxes, cable management, glands and circuit protection from AL MASAR YELLOW. Wholesale electrical supply across Saudi Arabia.",
+  path: "/products",
+  image: "/opengraph-image",
+});
 
 export default function ProductsPage() {
   return (
