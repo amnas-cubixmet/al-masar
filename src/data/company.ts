@@ -1,6 +1,6 @@
 export const company = {
   name: "AL MASAR YELLOW Company",
-  shortName: "AL MASAR YELLOW",
+  shortName: "AL MASAR YELLOW COMPANY",
   nationalNumber: "7051687288",
   vatNumber: "314234843600003",
   registeredAddress:

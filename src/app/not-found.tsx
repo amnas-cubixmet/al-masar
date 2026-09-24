@@ -3,7 +3,7 @@ import Link from "next/link";
 import Container from "@/components/ui/Container";
 import { ArrowLeft, Search } from "lucide-react";
 
-const notFoundTitle = "Page Not Found | AL MASAR YELLOW";
+const notFoundTitle = "Page Not Found | AL MASAR YELLOW COMPANY";
 const notFoundDescription = "The page you requested is not available on the AL MASAR YELLOW website.";
 
 export const metadata: Metadata = {
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: notFoundTitle,
     description: notFoundDescription,
-    siteName: "AL MASAR YELLOW",
+    siteName: "AL MASAR YELLOW COMPANY",
     type: "website",
     images: [
       {

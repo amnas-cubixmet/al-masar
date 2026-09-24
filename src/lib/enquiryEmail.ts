@@ -265,7 +265,7 @@ export function customerEnquiryEmail(details: EnquiryDetails) {
   ].join("\n");
 
   return {
-    subject: "We received your enquiry — AL MASAR YELLOW",
+    subject: "We received your enquiry — AL MASAR YELLOW COMPANY",
     html,
     text,
   };

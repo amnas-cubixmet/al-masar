@@ -2,7 +2,7 @@ import ProductsExplorer from "@/components/products/ProductsExplorer";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Electrical Products Catalogue | AL MASAR YELLOW",
+  title: "Electrical Products Catalogue | AL MASAR YELLOW COMPANY",
   description:
     "Browse EMT conduit, fittings, boxes, cable management, glands and circuit protection from AL MASAR YELLOW. Wholesale electrical supply across Saudi Arabia.",
   path: "/products",

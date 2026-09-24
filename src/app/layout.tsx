@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   description: defaultDescription,
   applicationName: siteName,
   keywords: [
-    "AL MASAR YELLOW",
+    "AL MASAR YELLOW COMPANY",
     "AL MASAR Electricals",
     "electrical materials supplier Saudi Arabia",
     "EMT conduit supplier",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     capable: true,
-    title: "AL MASAR YELLOW",
+    title: "AL MASAR YELLOW COMPANY",
     statusBarStyle: "black-translucent",
   },
   alternates: {
