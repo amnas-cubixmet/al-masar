@@ -3,7 +3,7 @@ import { branches } from "@/data/branches";
 import { absoluteUrl, pageMetadata, serializeJsonLd } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Contact AL MASAR YELLOW | Quotations & Branch Locations",
+  title: "Contact AL MASAR YELLOW COMPANY | Quotations & Branch Locations",
   description:
     "Request a quotation from AL MASAR YELLOW or visit our electrical supply branches in Riyadh, Jeddah and Qassim. Call, WhatsApp or send an enquiry.",
   path: "/contact",

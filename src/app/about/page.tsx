@@ -11,7 +11,7 @@ import AboutScrollAnimations from "@/components/about/AboutScrollAnimations";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "About AL MASAR YELLOW | Electrical Supplier in Saudi Arabia",
+  title: "About AL MASAR YELLOW COMPANY | Electrical Supplier in Saudi Arabia",
   description:
     "AL MASAR YELLOW supplies electrical materials across Saudi Arabia, with project procurement support and branches in Riyadh, Jeddah and Qassim.",
   path: "/about",

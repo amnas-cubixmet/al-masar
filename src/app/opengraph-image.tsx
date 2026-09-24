@@ -2,7 +2,7 @@ import { ImageResponse } from "next/og";
 import { OgCard, loadLogoDataUrl, ogSize } from "@/lib/ogCard";
 
 export const runtime = "nodejs";
-export const alt = "AL MASAR YELLOW | Electrical materials supplier in Saudi Arabia";
+export const alt = "AL MASAR YELLOW COMPANY | Electrical materials supplier in Saudi Arabia";
 export const size = ogSize;
 export const contentType = "image/png";
 
