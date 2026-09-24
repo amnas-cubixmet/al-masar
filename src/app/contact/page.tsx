@@ -5,7 +5,7 @@ import { absoluteUrl, pageMetadata, serializeJsonLd } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Contact AL MASAR YELLOW COMPANY | Quotations & Branch Locations",
   description:
-    "Request a quotation from AL MASAR YELLOW or visit our electrical supply branches in Riyadh, Jeddah and Qassim. Call, WhatsApp or send an enquiry.",
+    "Request a quotation from AL MASAR YELLOW COMPANY or visit our electrical supply branches in Riyadh, Jeddah and Qassim. Call, WhatsApp or send an enquiry.",
   path: "/contact",
   image: "/opengraph-image",
 });
@@ -19,7 +19,7 @@ export default function ContactPage() {
       position: index + 1,
       item: {
         "@type": "Store",
-        name: `AL MASAR YELLOW - ${branch.name}`,
+        name: `AL MASAR YELLOW COMPANY - ${branch.name}`,
         address: {
           "@type": "PostalAddress",
           streetAddress: branch.address,

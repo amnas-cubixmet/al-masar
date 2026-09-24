@@ -78,7 +78,7 @@ function shell({
             <tr>
               <td style="background-color:#07111F;padding:28px 32px 26px;">
                 <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;letter-spacing:2.4px;font-weight:700;color:#F5C542;">
-                  AL MASAR YELLOW
+                  AL MASAR YELLOW COMPANY
                 </div>
                 <div style="font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;color:#C5D0E0;padding-top:8px;">
                   Electrical materials supplier · Saudi Arabia
@@ -147,7 +147,7 @@ function shell({
                   <a href="mailto:${escapeHtml(company.email)}" style="color:#5C6BC0;text-decoration:none;">${escapeHtml(company.email)}</a>
                 </div>
                 <div style="font-family:Arial,Helvetica,sans-serif;font-size:11px;color:#9AA3B2;padding-top:12px;">
-                  © ${year} AL MASAR YELLOW. This message was sent from the website enquiry form.
+                  © ${year} AL MASAR YELLOW COMPANY. This message was sent from the website enquiry form.
                 </div>
               </td>
             </tr>
@@ -194,7 +194,7 @@ export function teamEnquiryEmail(details: EnquiryDetails) {
   });
 
   const text = [
-    "AL MASAR YELLOW — New website enquiry",
+    "AL MASAR YELLOW COMPANY — New website enquiry",
     "",
     `Name: ${details.name}`,
     `Company: ${details.companyName || "Not provided"}`,
@@ -261,7 +261,7 @@ export function customerEnquiryEmail(details: EnquiryDetails) {
     "Your message:",
     details.message || "No additional requirements provided.",
     "",
-    `AL MASAR YELLOW · ${company.email} · ${company.website}`,
+    `AL MASAR YELLOW COMPANY · ${company.email} · ${company.website}`,
   ].join("\n");
 
   return {

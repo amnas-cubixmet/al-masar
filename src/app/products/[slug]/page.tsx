@@ -19,7 +19,7 @@ export async function generateMetadata({
     return {
       ...pageMetadata({
         title: `Product Not Found | ${siteName}`,
-        description: "This electrical product is not available in the AL MASAR YELLOW catalogue.",
+        description: "This electrical product is not available in the AL MASAR YELLOW COMPANY catalogue.",
         path: `/products/${slug}`,
       }),
       robots: { index: false, follow: true },
@@ -27,7 +27,7 @@ export async function generateMetadata({
   }
 
   const title = `${product.title} | ${siteName}`;
-  const description = `${product.description.replace(/\.$/, "")}. Wholesale supply from AL MASAR YELLOW across Saudi Arabia.`;
+  const description = `${product.description.replace(/\.$/, "")}. Wholesale supply from AL MASAR YELLOW COMPANY across Saudi Arabia.`;
 
   return pageMetadata({
     title,

@@ -171,7 +171,7 @@ export async function POST(request: Request) {
       },
     });
 
-    const from = `AL MASAR YELLOW <${smtpUser}>`;
+    const from = `AL MASAR YELLOW COMPANY <${smtpUser}>`;
 
     await transporter.sendMail({
       from,

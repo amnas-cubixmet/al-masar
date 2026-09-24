@@ -8,7 +8,7 @@ export const defaultTitle =
   "AL MASAR YELLOW COMPANY | Electrical Materials Supplier in Saudi Arabia";
 
 export const defaultDescription =
-  "Wholesale electrical materials from AL MASAR YELLOW: EMT conduit, fittings, cable management and circuit protection. Branches in Riyadh, Jeddah and Qassim.";
+  "Wholesale electrical materials from AL MASAR YELLOW COMPANY: EMT conduit, fittings, cable management and circuit protection. Branches in Riyadh, Jeddah and Qassim.";
 
 export function absoluteUrl(path = "/"): string {
   if (!path || path === "/") return siteUrl;

@@ -40,7 +40,7 @@ export default function Footer() {
 
             <div className="min-w-0">
               <div className="text-[12px] font-extrabold tracking-[0.08em] text-white sm:text-[13px]">
-                AL MASAR YELLOW
+                AL MASAR YELLOW COMPANY
               </div>
               <div className="mt-1 text-[10px] font-medium tracking-[0.06em] text-[#AAB4C3] sm:text-[11px]">
                 {isArabic ? "المواد الكهربائية" : "Electrical Materials"}

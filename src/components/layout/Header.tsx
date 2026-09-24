@@ -43,7 +43,7 @@ export default function Header() {
           />
           <span className="flex min-w-0 flex-col justify-center whitespace-nowrap leading-none">
             <span className="text-[11px] font-extrabold tracking-[0.08em] text-white sm:text-[13px] lg:text-[14px]">
-              AL MASAR YELLOW
+              AL MASAR YELLOW COMPANY
             </span>
             <span className="mt-1 text-[9px] font-medium tracking-[0.06em] text-[#AAB4C3] sm:text-[10px]">
               Electrical Materials

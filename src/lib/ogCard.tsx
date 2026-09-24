@@ -50,7 +50,7 @@ export function OgCard({
             fontWeight: 700,
           }}
         >
-          AL MASAR YELLOW
+          AL MASAR YELLOW COMPANY
         </div>
       </div>
 

@@ -18,8 +18,8 @@ export async function generateImageMetadata({
     {
       id: "og",
       alt: product
-        ? `${product.title} | AL MASAR YELLOW`
-        : "AL MASAR YELLOW electrical products",
+        ? `${product.title} | AL MASAR YELLOW COMPANY`
+        : "AL MASAR YELLOW COMPANY electrical products",
       size,
       contentType,
     },
