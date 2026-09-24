@@ -1,5 +1,7 @@
 import nodemailer from "nodemailer";
 import { NextResponse } from "next/server";
+import { company } from "@/data/company";
+import { customerEnquiryEmail, teamEnquiryEmail } from "@/lib/enquiryEmail";
 
 export const runtime = "nodejs";
 
@@ -23,15 +25,6 @@ const allowedExtensions = new Set([
   ".png",
 ]);
 
-function escapeHtml(value: string) {
-  return value
-    .replaceAll("&", "&amp;")
-    .replaceAll("<", "&lt;")
-    .replaceAll(">", "&gt;")
-    .replaceAll('"', "&quot;")
-    .replaceAll("'", "&#039;");
-}
-
 function readText(formData: FormData, key: string) {
   const value = formData.get(key);
   return typeof value === "string" ? value.trim() : "";
@@ -42,13 +35,34 @@ function getExtension(filename: string) {
   return index >= 0 ? filename.slice(index).toLowerCase() : "";
 }
 
+function isEmail(value: string) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+}
+
+function uniqueEmails(emails: string[]) {
+  const seen = new Set<string>();
+  const result: string[] = [];
+
+  for (const email of emails) {
+    const trimmed = email.trim();
+    const key = trimmed.toLowerCase();
+    if (!trimmed || seen.has(key)) continue;
+    seen.add(key);
+    result.push(trimmed);
+  }
+
+  return result;
+}
+
 export async function POST(request: Request) {
   try {
     const smtpUser = process.env.SMTP_USER?.trim();
     const smtpAppPassword = process.env.SMTP_APP_PASSWORD?.replace(/\s+/g, "");
-    const toEmail = process.env.CONTACT_TO_EMAIL?.trim() || smtpUser;
+    const companyInbox = company.email.trim();
+    const extraInbox = process.env.CONTACT_TO_EMAIL?.trim() || "";
+    const teamRecipients = uniqueEmails([companyInbox, extraInbox]);
 
-    if (!smtpUser || !smtpAppPassword || !toEmail) {
+    if (!smtpUser || !smtpAppPassword || teamRecipients.length === 0) {
       return NextResponse.json(
         {
           ok: false,
@@ -71,9 +85,16 @@ export async function POST(request: Request) {
     const message = readText(formData, "message");
     const branch = readText(formData, "branch");
 
-    if (!name || !mobile) {
+    if (!name || !mobile || !email) {
       return NextResponse.json(
-        { ok: false, error: "Name and phone number are required." },
+        { ok: false, error: "Name, phone number, and email are required." },
+        { status: 400 }
+      );
+    }
+
+    if (!isEmail(email)) {
+      return NextResponse.json(
+        { ok: false, error: "Enter a valid email address." },
         { status: 400 }
       );
     }
@@ -126,21 +147,19 @@ export async function POST(request: Request) {
       });
     }
 
-    const safe = {
-      name: escapeHtml(name),
-      companyName: escapeHtml(companyName || "N/A"),
-      phoneNumber: escapeHtml(phoneNumber),
-      email: escapeHtml(email || "N/A"),
-      product: escapeHtml(product || "General Enquiry"),
-      projectType: escapeHtml(projectType || "Not specified"),
-      message: escapeHtml(message || "No additional requirements provided."),
-      branch: escapeHtml(branch || "Main Branch"),
+    const enquiry = {
+      name,
+      companyName,
+      phoneNumber,
+      email,
+      product,
+      projectType,
+      branch,
+      message,
+      attachmentNames: attachments.map((item) => item.filename),
     };
-
-    const attachmentNames =
-      attachments.length > 0
-        ? attachments.map((item) => escapeHtml(item.filename)).join(", ")
-        : "None";
+    const teamEmail = teamEnquiryEmail(enquiry);
+    const customerEmail = customerEnquiryEmail(enquiry);
 
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST?.trim() || "smtp.gmail.com",
@@ -152,31 +171,25 @@ export async function POST(request: Request) {
       },
     });
 
+    const from = `AL MASAR YELLOW <${smtpUser}>`;
+
     await transporter.sendMail({
-      from: `AL MASAR Website <${smtpUser}>`,
-      to: toEmail,
-      replyTo: email || undefined,
-      subject: `Website Quote Request — ${name}`,
-      html: `
-        <div style="font-family:Arial,sans-serif;line-height:1.6;color:#111827">
-          <h2 style="margin:0 0 18px">New AL MASAR Website Enquiry</h2>
-          <table style="border-collapse:collapse;width:100%;max-width:720px">
-            <tbody>
-              <tr><td style="padding:8px 0;font-weight:700">Name</td><td style="padding:8px 0">${safe.name}</td></tr>
-              <tr><td style="padding:8px 0;font-weight:700">Company</td><td style="padding:8px 0">${safe.companyName}</td></tr>
-              <tr><td style="padding:8px 0;font-weight:700">Phone</td><td style="padding:8px 0">${safe.phoneNumber}</td></tr>
-              <tr><td style="padding:8px 0;font-weight:700">Email</td><td style="padding:8px 0">${safe.email}</td></tr>
-              <tr><td style="padding:8px 0;font-weight:700">Product / Category</td><td style="padding:8px 0">${safe.product}</td></tr>
-              <tr><td style="padding:8px 0;font-weight:700">Project Type</td><td style="padding:8px 0">${safe.projectType}</td></tr>
-              <tr><td style="padding:8px 0;font-weight:700">Branch</td><td style="padding:8px 0">${safe.branch}</td></tr>
-              <tr><td style="padding:8px 0;font-weight:700">Attachments</td><td style="padding:8px 0">${attachmentNames}</td></tr>
-            </tbody>
-          </table>
-          <h3 style="margin:22px 0 8px">Message / Requirements</h3>
-          <p style="white-space:pre-wrap;margin:0">${safe.message}</p>
-        </div>
-      `,
+      from,
+      to: teamRecipients,
+      replyTo: email,
+      subject: teamEmail.subject,
+      html: teamEmail.html,
+      text: teamEmail.text,
       attachments,
+    });
+
+    await transporter.sendMail({
+      from,
+      to: email,
+      replyTo: companyInbox,
+      subject: customerEmail.subject,
+      html: customerEmail.html,
+      text: customerEmail.text,
     });
 
     return NextResponse.json({ ok: true });

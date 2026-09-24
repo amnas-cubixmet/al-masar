@@ -57,6 +57,7 @@ export default function ContactForm({
 
   const [files, setFiles] = useState<File[]>([]);
   const [submitted, setSubmitted] = useState(false);
+  const [sentVia, setSentVia] = useState<"email" | "whatsapp">("email");
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
 
@@ -112,6 +113,22 @@ Project Type: ${formData.projectType || "Standard"}
 Branch: ${mainBranch.name}
 ${attachmentNames ? `Attached File(s): ${attachmentNames}\n` : ""}Requirements: ${formData.message || "Requesting quotation and material availability."}`;
 
+  const enquiryWhatsappUrl = whatsappHref(
+    company.quoteWhatsapp,
+    whatsappMessage
+  );
+
+  const openEnquiryWhatsapp = () => {
+    const opened = window.open(
+      enquiryWhatsappUrl,
+      "_blank",
+      "noopener,noreferrer"
+    );
+    if (!opened) {
+      window.location.assign(enquiryWhatsappUrl);
+    }
+  };
+
   const handleSubmit = async (event: FormEvent) => {
     event.preventDefault();
     if (!formData.agreed || submitting) return;
@@ -144,24 +161,29 @@ ${attachmentNames ? `Attached File(s): ${attachmentNames}\n` : ""}Requirements: 
         | { ok?: boolean; error?: string }
         | null;
 
-      if (!response.ok || !result?.ok) {
-        throw new Error(
+      if (response.status === 400) {
+        setSubmitError(
           result?.error ||
             (isArabic
-              ? "تعذر إرسال الطلب. يرجى المحاولة مرة أخرى."
-              : "Unable to send the enquiry. Please try again.")
+              ? "يرجى التحقق من بيانات النموذج."
+              : "Please check the form and try again.")
         );
+        return;
       }
 
+      if (!response.ok || !result?.ok) {
+        openEnquiryWhatsapp();
+        setSentVia("whatsapp");
+        setSubmitted(true);
+        return;
+      }
+
+      setSentVia("email");
       setSubmitted(true);
-    } catch (error) {
-      setSubmitError(
-        error instanceof Error
-          ? error.message
-          : isArabic
-            ? "تعذر إرسال الطلب. يرجى المحاولة مرة أخرى."
-            : "Unable to send the enquiry. Please try again."
-      );
+    } catch {
+      openEnquiryWhatsapp();
+      setSentVia("whatsapp");
+      setSubmitted(true);
     } finally {
       setSubmitting(false);
     }
@@ -169,6 +191,7 @@ ${attachmentNames ? `Attached File(s): ${attachmentNames}\n` : ""}Requirements: 
 
   const resetForm = () => {
     setSubmitted(false);
+    setSentVia("email");
     setSubmitError("");
     setCountryCode("+966");
     setFiles([]);
@@ -213,26 +236,42 @@ ${attachmentNames ? `Attached File(s): ${attachmentNames}\n` : ""}Requirements: 
           </div>
 
           <h4 className="mt-4 text-lg font-bold text-white">
-            {isArabic
-              ? "تم إرسال طلبكم بنجاح"
-              : "Your enquiry has been sent successfully."}
+            {sentVia === "whatsapp"
+              ? isArabic
+                ? "تعذر إرسال البريد. أكمل الطلب عبر واتساب."
+                : "Email could not be sent. Continue on WhatsApp."
+              : isArabic
+                ? "تم إرسال طلبكم بنجاح"
+                : "Your enquiry has been sent successfully."}
           </h4>
 
           <p className="mt-2 text-sm text-slate-300">
-            {isArabic
-              ? "تم إرسال تفاصيل الطلب والمرفقات إلى فريقنا عبر البريد الإلكتروني. للمتابعة السريعة يمكنك التواصل عبر واتساب."
-              : "Your enquiry details and attachments have been emailed to our team. For a faster response, you can also continue on WhatsApp."}
+            {sentVia === "whatsapp"
+              ? isArabic
+                ? "فتحنا واتساب وكتبنا تفاصيل طلبك في الرسالة. يرجى الضغط على إرسال."
+                : "WhatsApp is open with your enquiry already written in the message. Please tap send."
+              : isArabic
+                ? "أرسلنا تأكيداً إلى بريدك الإلكتروني، وأُرسل الطلب إلى فريقنا. للمتابعة السريعة يمكنك التواصل عبر واتساب."
+                : "A confirmation was sent to your email, and your enquiry was sent to our team. For a faster response, you can also continue on WhatsApp."}
           </p>
 
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             <a
-              href={whatsappHref(company.quoteWhatsapp, whatsappMessage)}
+              href={enquiryWhatsappUrl}
               target="_blank"
               rel="noreferrer"
               className="inline-flex h-10 items-center gap-2 rounded-xl bg-gradient-to-r from-[#6EA8FF] via-[#8A63E8] to-[#C45BCB] px-6 text-sm font-bold text-white shadow-lg transition hover:brightness-110 sm:h-12"
             >
               <MessageCircle className="h-4 w-4" />
-              <span>{isArabic ? "متابعة عبر واتساب" : "Continue on WhatsApp"}</span>
+              <span>
+                {sentVia === "whatsapp"
+                  ? isArabic
+                    ? "إرسال عبر واتساب"
+                    : "Send on WhatsApp"
+                  : isArabic
+                    ? "متابعة عبر واتساب"
+                    : "Continue on WhatsApp"}
+              </span>
             </a>
 
             <button
@@ -322,10 +361,11 @@ ${attachmentNames ? `Attached File(s): ${attachmentNames}\n` : ""}Requirements: 
 
             <div className="contact-form-field min-w-0">
               <label className="mb-1 block text-[10px] font-bold text-[#AAB4C3] sm:mb-1.5 sm:text-xs">
-                {isArabic ? "البريد الإلكتروني" : "Email Address"}
+                {isArabic ? "البريد الإلكتروني *" : "Email Address *"}
               </label>
               <input
                 type="email"
+                required
                 value={formData.email}
                 onChange={(event) =>
                   setFormData({ ...formData, email: event.target.value })
