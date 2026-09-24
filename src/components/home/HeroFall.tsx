@@ -42,8 +42,8 @@ export default function HeroFall() {
             </p>
           </div>
 
-          <h1 className="hero-heading mb-5 text-[42px] font-extrabold leading-[0.98] tracking-[-0.035em] sm:mb-7 sm:text-[66px] lg:text-[68px] xl:text-[78px] 2xl:text-[88px]">
-            <span className="block overflow-hidden">
+          <h1 className="hero-heading mb-5 text-[42px] font-extrabold leading-[1.02] tracking-[-0.035em] sm:mb-7 sm:text-[66px] lg:text-[68px] xl:text-[78px] 2xl:text-[88px]">
+            <span className="block overflow-visible pb-[0.08em]">
               <span className="hero-title-line-1 block text-white">
                 {t.headlineWhite}
               </span>
