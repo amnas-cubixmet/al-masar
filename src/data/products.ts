@@ -874,6 +874,8 @@ const catalogue: readonly CatalogueItem[] = [
   { id: 804, title: "INDUSTRIAL SOCKET FEMALE N-213 16 AMP 3PIN" },
   { id: 805, title: "INDUSTRIAL SOCKET MALE N-023 32 AMP 3PIN" },
   { id: 806, title: "INDUSTRIAL SOCKET FEMALE N-223 32 AMP 3PIN" },
+  // Source catalogue row 33; website variant ID 807 avoids existing ID 33.
+  { id: 807, title: "3PIN PLUG 20AMP 250V AMERICAN TYPE" },
 ];
 
 /**
@@ -1053,6 +1055,7 @@ const imageRanges: readonly ImageRange[] = [
   { start: 801, end: 801, image: "/images/products/product-767.jpg", mainCategory: "Support Systems" },
   { start: 802, end: 802, image: "/images/products/product-768.jpg", mainCategory: "Support Systems" },
   { start: 803, end: 806, image: "/images/products/product-769.jpg", mainCategory: "Wiring Accessories" },
+  { start: 807, end: 807, image: "/images/products/product-770.jpg", mainCategory: "Wiring Accessories" },
 ];
 
 const range = (start: number, end: number): number[] =>
@@ -1459,6 +1462,7 @@ const groups: readonly ProductGroup[] = [
   { id: "base-plate-double-channel", slug: "base-plate-double-channel", title: "BASE PLATE DOUBLE CHANNEL", variantIds: [802] },
   { id: "industrial-socket-male", slug: "industrial-socket-male", title: "INDUSTRIAL SOCKET MALE", variantIds: [803, 805] },
   { id: "industrial-socket-female", slug: "industrial-socket-female", title: "INDUSTRIAL SOCKET FEMALE", variantIds: [804, 806] },
+  { id: "3pin-plug", slug: "3pin-plug", title: "3PIN PLUG", variantIds: [807] },
 ];
 const catalogueById = new Map(catalogue.map((item) => [item.id, item]));
 
@@ -1492,17 +1496,17 @@ const removedDuplicateIds = new Set([374, 375]);
 function validateGroups() {
   const ids = groups.flatMap((group) => [...group.variantIds]);
 
-  if (ids.length !== 804) {
-    throw new Error(`Expected 804 active catalogue variants, received ${ids.length}`);
+  if (ids.length !== 805) {
+    throw new Error(`Expected 805 active catalogue variants, received ${ids.length}`);
   }
 
   const unique = new Set(ids);
 
-  if (unique.size !== 804) {
+  if (unique.size !== 805) {
     throw new Error("Duplicate SR.NO. found in product groups");
   }
 
-  for (let id = 1; id <= 806; id += 1) {
+  for (let id = 1; id <= 807; id += 1) {
     if (removedDuplicateIds.has(id)) continue;
 
     if (!unique.has(id)) {
