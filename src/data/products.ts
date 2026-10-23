@@ -886,6 +886,14 @@ const catalogue: readonly CatalogueItem[] = [
   { id: 812, title: "PVC HOLE CLOSER HP-19 BLACK PRESS TYPE VISION" },
   { id: 813, title: "PVC HOLE CLOSER HP-25 BLACK PRESS TYPE VISION" },
   { id: 814, title: "PVC HOLE CLOSER HP-30 BLACK PRESS TYPE VISION" },
+  // PVC cable cleat PTC catalogue variants (supplier rows 49–54; first two both labelled 49).
+  { id: 815, title: "PVC CABLE CLEAT PTC 13-25" },
+  { id: 816, title: "PVC CABLE CLEAT PTC 20-36" },
+  { id: 817, title: "PVC CABLE CLEAT PTC 36-52" },
+  { id: 818, title: "PVC CABLE CLEAT PTC 55-75" },
+  { id: 819, title: "PVC CABLE CLEAT PTC 75-95" },
+  { id: 820, title: "PVC CABLE CLEAT PTC 90-150" },
+  { id: 821, title: "PVC CABLE CLEAT PTC 160-230" },
 ];
 
 /**
@@ -1069,6 +1077,7 @@ const imageRanges: readonly ImageRange[] = [
   { start: 808, end: 808, image: "/images/products/product-771.jpg", mainCategory: "Circuit Protection" },
   { start: 809, end: 811, image: "/images/products/product-772.jpg", mainCategory: "Wiring Accessories" },
   { start: 812, end: 814, image: "/images/products/product-773.jpg", mainCategory: "Wiring Accessories" },
+  { start: 815, end: 821, image: "/images/products/product-775.jpg", mainCategory: "Support Systems" },
 ];
 
 const range = (start: number, end: number): number[] =>
@@ -1479,6 +1488,7 @@ const groups: readonly ProductGroup[] = [
   { id: "lamp-control-fuse-box", slug: "lamp-control-fuse-box", title: "LAMP CONTROL FUSE BOX", variantIds: [808] },
   { id: "pvc-hole-closer-grey-thread", slug: "pvc-hole-closer-grey-thread", title: "PVC HOLE CLOSER GREY THREAD TYPE VISION", variantIds: [809, 810, 811] },
   { id: "pvc-hole-closer-black-press", slug: "pvc-hole-closer-black-press", title: "PVC HOLE CLOSER BLACK PRESS TYPE VISION", variantIds: [812, 813, 814] },
+  { id: "pvc-cable-cleat-ptc", slug: "pvc-cable-cleat-ptc", title: "PVC CABLE CLEAT PTC", variantIds: [...range(815, 821)] },
 ];
 const catalogueById = new Map(catalogue.map((item) => [item.id, item]));
 
@@ -1512,17 +1522,17 @@ const removedDuplicateIds = new Set([374, 375]);
 function validateGroups() {
   const ids = groups.flatMap((group) => [...group.variantIds]);
 
-  if (ids.length !== 812) {
-    throw new Error(`Expected 812 active catalogue variants, received ${ids.length}`);
+  if (ids.length !== 819) {
+    throw new Error(`Expected 819 active catalogue variants, received ${ids.length}`);
   }
 
   const unique = new Set(ids);
 
-  if (unique.size !== 812) {
+  if (unique.size !== 819) {
     throw new Error("Duplicate SR.NO. found in product groups");
   }
 
-  for (let id = 1; id <= 814; id += 1) {
+  for (let id = 1; id <= 821; id += 1) {
     if (removedDuplicateIds.has(id)) continue;
 
     if (!unique.has(id)) {
