@@ -895,6 +895,7 @@ const catalogue: readonly CatalogueItem[] = [
   { id: 820, title: "PVC CABLE CLEAT PTC 90-150" },
   { id: 821, title: "PVC CABLE CLEAT PTC 160-230" },
   { id: 822, title: 'BANDIT STRAPS 3/4" 30MTR' },
+  { id: 823, title: 'BUCKLE CLAMP 3/4"' },
 ];
 
 /**
@@ -1080,6 +1081,7 @@ const imageRanges: readonly ImageRange[] = [
   { start: 812, end: 814, image: "/images/products/product-773.jpg", mainCategory: "Wiring Accessories" },
   { start: 815, end: 821, image: "/images/products/product-775.jpg", mainCategory: "Support Systems" },
   { start: 822, end: 822, image: "/images/products/product-777.jpg", mainCategory: "Cable Management" },
+  { start: 823, end: 823, image: "/images/products/product-778.jpg", mainCategory: "Cable Management" },
 ];
 
 const range = (start: number, end: number): number[] =>
@@ -1492,6 +1494,7 @@ const groups: readonly ProductGroup[] = [
   { id: "pvc-hole-closer-black-press", slug: "pvc-hole-closer-black-press", title: "PVC HOLE CLOSER BLACK PRESS TYPE VISION", variantIds: [812, 813, 814] },
   { id: "pvc-cable-cleat-ptc", slug: "pvc-cable-cleat-ptc", title: "PVC CABLE CLEAT PTC", variantIds: [...range(815, 821)] },
   { id: "bandit-straps", slug: "bandit-straps", title: "BANDIT STRAPS", variantIds: [822] },
+  { id: "buckle-clamp", slug: "buckle-clamp", title: "BUCKLE CLAMP", variantIds: [823] },
 ];
 const catalogueById = new Map(catalogue.map((item) => [item.id, item]));
 
@@ -1525,17 +1528,17 @@ const removedDuplicateIds = new Set([374, 375]);
 function validateGroups() {
   const ids = groups.flatMap((group) => [...group.variantIds]);
 
-  if (ids.length !== 820) {
-    throw new Error(`Expected 820 active catalogue variants, received ${ids.length}`);
+  if (ids.length !== 821) {
+    throw new Error(`Expected 821 active catalogue variants, received ${ids.length}`);
   }
 
   const unique = new Set(ids);
 
-  if (unique.size !== 820) {
+  if (unique.size !== 821) {
     throw new Error("Duplicate SR.NO. found in product groups");
   }
 
-  for (let id = 1; id <= 822; id += 1) {
+  for (let id = 1; id <= 823; id += 1) {
     if (removedDuplicateIds.has(id)) continue;
 
     if (!unique.has(id)) {
