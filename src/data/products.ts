@@ -2,7 +2,7 @@
  * AL MASAR product catalogue — product-family reset.
  *
  * IMPORTANT DATA MODEL:
- * - SR.NO. 1–749 are catalogue VARIANTS / measurements / specifications.
+ * - Catalogue item IDs are VARIANTS / measurements / specifications.
  * - They are NOT 749 separate product cards.
  * - `products` contains real product families such as `EMT CLAMP 1 HOLE`.
  * - `variants` contains size/spec options such as `1/2'' UL`, `3/4'' CH`, etc.
@@ -869,6 +869,11 @@ const catalogue: readonly CatalogueItem[] = [
   { id: 800, title: "BASE PLATE 15X15 CM" },
   { id: 801, title: "BASE PLATE 8X15 CM" },
   { id: 802, title: "BASE PLATE DOUBLE CHANNEL 12 HOLE" },
+  // Source industrial-socket reference rows 27–30; assigned unique website IDs 803–806.
+  { id: 803, title: "INDUSTRIAL SOCKET MALE N-013 16 AMP 3PIN" },
+  { id: 804, title: "INDUSTRIAL SOCKET FEMALE N-213 16 AMP 3PIN" },
+  { id: 805, title: "INDUSTRIAL SOCKET MALE N-023 32 AMP 3PIN" },
+  { id: 806, title: "INDUSTRIAL SOCKET FEMALE N-223 32 AMP 3PIN" },
 ];
 
 /**
@@ -1047,6 +1052,8 @@ const imageRanges: readonly ImageRange[] = [
   { start: 800, end: 800, image: "/images/products/product-766.jpg", mainCategory: "Support Systems" },
   { start: 801, end: 801, image: "/images/products/product-767.jpg", mainCategory: "Support Systems" },
   { start: 802, end: 802, image: "/images/products/product-768.jpg", mainCategory: "Support Systems" },
+  // Use the existing category artwork until model-specific socket photos are supplied.
+  { start: 803, end: 806, image: "/images/categories/wiring-accessories.png", mainCategory: "Wiring Accessories" },
 ];
 
 const range = (start: number, end: number): number[] =>
@@ -1451,6 +1458,8 @@ const groups: readonly ProductGroup[] = [
   { id: "base-plate-15x15-cm", slug: "base-plate-15x15-cm", title: "BASE PLATE 15X15 CM", variantIds: [800] },
   { id: "base-plate-8x15-cm", slug: "base-plate-8x15-cm", title: "BASE PLATE 8X15 CM", variantIds: [801] },
   { id: "base-plate-double-channel", slug: "base-plate-double-channel", title: "BASE PLATE DOUBLE CHANNEL", variantIds: [802] },
+  { id: "industrial-socket-male", slug: "industrial-socket-male", title: "INDUSTRIAL SOCKET MALE", variantIds: [803, 805] },
+  { id: "industrial-socket-female", slug: "industrial-socket-female", title: "INDUSTRIAL SOCKET FEMALE", variantIds: [804, 806] },
 ];
 const catalogueById = new Map(catalogue.map((item) => [item.id, item]));
 
@@ -1472,22 +1481,29 @@ function getSpecification(fullTitle: string, productTitle: string) {
   return full;
 }
 
+const industrialSocketCodes = new Map<number, string>([
+  [803, "N-013"],
+  [804, "N-213"],
+  [805, "N-023"],
+  [806, "N-223"],
+]);
+
 const removedDuplicateIds = new Set([374, 375]);
 
 function validateGroups() {
   const ids = groups.flatMap((group) => [...group.variantIds]);
 
-  if (ids.length !== 800) {
-    throw new Error(`Expected 800 active catalogue variants, received ${ids.length}`);
+  if (ids.length !== 804) {
+    throw new Error(`Expected 804 active catalogue variants, received ${ids.length}`);
   }
 
   const unique = new Set(ids);
 
-  if (unique.size !== 800) {
+  if (unique.size !== 804) {
     throw new Error("Duplicate SR.NO. found in product groups");
   }
 
-  for (let id = 1; id <= 802; id += 1) {
+  for (let id = 1; id <= 806; id += 1) {
     if (removedDuplicateIds.has(id)) continue;
 
     if (!unique.has(id)) {
@@ -1513,7 +1529,7 @@ export const products: Product[] = groups.map((group) => {
 
     return {
       id,
-      code: `EMT-${String(id).padStart(3, "0")}`,
+      code: industrialSocketCodes.get(id) ?? `EMT-${String(id).padStart(3, "0")}`,
       specification,
       fullTitle: item.title,
       title: item.title,
