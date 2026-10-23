@@ -896,6 +896,8 @@ const catalogue: readonly CatalogueItem[] = [
   { id: 821, title: "PVC CABLE CLEAT PTC 160-230" },
   { id: 822, title: 'BANDIT STRAPS 3/4" 30MTR' },
   { id: 823, title: 'BUCKLE CLAMP 3/4"' },
+  { id: 824, title: "MARKER STRIP STEEL MSS-89X9.5 MM" },
+  { id: 825, title: "MARKER STRIP STEEL MSS-89X19 MM" },
 ];
 
 /**
@@ -1082,6 +1084,7 @@ const imageRanges: readonly ImageRange[] = [
   { start: 815, end: 821, image: "/images/products/product-775.jpg", mainCategory: "Support Systems" },
   { start: 822, end: 822, image: "/images/products/product-777.jpg", mainCategory: "Cable Management" },
   { start: 823, end: 823, image: "/images/products/product-778.jpg", mainCategory: "Cable Management" },
+  { start: 824, end: 825, image: "/images/products/product-780.jpg", mainCategory: "Cable Management" },
 ];
 
 const range = (start: number, end: number): number[] =>
@@ -1495,6 +1498,7 @@ const groups: readonly ProductGroup[] = [
   { id: "pvc-cable-cleat-ptc", slug: "pvc-cable-cleat-ptc", title: "PVC CABLE CLEAT PTC", variantIds: [...range(815, 821)] },
   { id: "bandit-straps", slug: "bandit-straps", title: "BANDIT STRAPS", variantIds: [822] },
   { id: "buckle-clamp", slug: "buckle-clamp", title: "BUCKLE CLAMP", variantIds: [823] },
+  { id: "marker-strip-steel-mss", slug: "marker-strip-steel-mss", title: "MARKER STRIP STEEL MSS", variantIds: [824, 825] },
 ];
 const catalogueById = new Map(catalogue.map((item) => [item.id, item]));
 
@@ -1516,11 +1520,13 @@ function getSpecification(fullTitle: string, productTitle: string) {
   return full;
 }
 
-const industrialSocketCodes = new Map<number, string>([
+const catalogueModelCodes = new Map<number, string>([
   [803, "N-013"],
   [804, "N-213"],
   [805, "N-023"],
   [806, "N-223"],
+  [824, "MSS-89X9.5"],
+  [825, "MSS-89X19"],
 ]);
 
 const removedDuplicateIds = new Set([374, 375]);
@@ -1528,17 +1534,17 @@ const removedDuplicateIds = new Set([374, 375]);
 function validateGroups() {
   const ids = groups.flatMap((group) => [...group.variantIds]);
 
-  if (ids.length !== 821) {
-    throw new Error(`Expected 821 active catalogue variants, received ${ids.length}`);
+  if (ids.length !== 823) {
+    throw new Error(`Expected 823 active catalogue variants, received ${ids.length}`);
   }
 
   const unique = new Set(ids);
 
-  if (unique.size !== 821) {
+  if (unique.size !== 823) {
     throw new Error("Duplicate SR.NO. found in product groups");
   }
 
-  for (let id = 1; id <= 823; id += 1) {
+  for (let id = 1; id <= 825; id += 1) {
     if (removedDuplicateIds.has(id)) continue;
 
     if (!unique.has(id)) {
@@ -1564,7 +1570,7 @@ export const products: Product[] = groups.map((group) => {
 
     return {
       id,
-      code: industrialSocketCodes.get(id) ?? `EMT-${String(id).padStart(3, "0")}`,
+      code: catalogueModelCodes.get(id) ?? `EMT-${String(id).padStart(3, "0")}`,
       specification,
       fullTitle: item.title,
       title: item.title,
