@@ -1052,8 +1052,8 @@ const imageRanges: readonly ImageRange[] = [
   { start: 800, end: 800, image: "/images/products/product-766.jpg", mainCategory: "Support Systems" },
   { start: 801, end: 801, image: "/images/products/product-767.jpg", mainCategory: "Support Systems" },
   { start: 802, end: 802, image: "/images/products/product-768.jpg", mainCategory: "Support Systems" },
-  // Use the existing category artwork until model-specific socket photos are supplied.
-  { start: 803, end: 806, image: "/images/categories/wiring-accessories.png", mainCategory: "Wiring Accessories" },
+  // Industrial socket models share this existing product image until individual model photos are available.
+  { start: 803, end: 806, image: "/images/products/product-768.jpg", mainCategory: "Wiring Accessories" },
 ];
 
 const range = (start: number, end: number): number[] =>
