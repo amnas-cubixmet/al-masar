@@ -878,6 +878,14 @@ const catalogue: readonly CatalogueItem[] = [
   { id: 807, title: "3PIN PLUG 20AMP 250V AMERICAN TYPE" },
   // Source catalogue row 40; separate website ID avoids conflicting with existing row 40.
   { id: 808, title: "LAMP CONTROL FUSE BOX MVL435" },
+  // Supplier catalogue rows 41–43 (grey thread type), variant IDs 809–811.
+  { id: 809, title: "PVC HOLE CLOSER M20 GREY THREAD TYPE VISION" },
+  { id: 810, title: "PVC HOLE CLOSER M25 GREY THREAD TYPE VISION" },
+  { id: 811, title: "PVC HOLE CLOSER M32 GREY THREAD TYPE VISION" },
+  // Supplier catalogue rows 44–46 (black press type), variant IDs 812–814.
+  { id: 812, title: "PVC HOLE CLOSER HP-19 BLACK PRESS TYPE VISION" },
+  { id: 813, title: "PVC HOLE CLOSER HP-25 BLACK PRESS TYPE VISION" },
+  { id: 814, title: "PVC HOLE CLOSER HP-30 BLACK PRESS TYPE VISION" },
 ];
 
 /**
@@ -1059,6 +1067,8 @@ const imageRanges: readonly ImageRange[] = [
   { start: 803, end: 806, image: "/images/products/product-769.jpg", mainCategory: "Wiring Accessories" },
   { start: 807, end: 807, image: "/images/products/product-770.jpg", mainCategory: "Wiring Accessories" },
   { start: 808, end: 808, image: "/images/products/product-771.jpg", mainCategory: "Circuit Protection" },
+  { start: 809, end: 811, image: "/images/products/product-772.jpg", mainCategory: "Wiring Accessories" },
+  { start: 812, end: 814, image: "/images/products/product-773.jpg", mainCategory: "Wiring Accessories" },
 ];
 
 const range = (start: number, end: number): number[] =>
@@ -1467,6 +1477,8 @@ const groups: readonly ProductGroup[] = [
   { id: "industrial-socket-female", slug: "industrial-socket-female", title: "INDUSTRIAL SOCKET FEMALE", variantIds: [804, 806] },
   { id: "3pin-plug", slug: "3pin-plug", title: "3PIN PLUG", variantIds: [807] },
   { id: "lamp-control-fuse-box", slug: "lamp-control-fuse-box", title: "LAMP CONTROL FUSE BOX", variantIds: [808] },
+  { id: "pvc-hole-closer-grey-thread", slug: "pvc-hole-closer-grey-thread", title: "PVC HOLE CLOSER GREY THREAD TYPE VISION", variantIds: [809, 810, 811] },
+  { id: "pvc-hole-closer-black-press", slug: "pvc-hole-closer-black-press", title: "PVC HOLE CLOSER BLACK PRESS TYPE VISION", variantIds: [812, 813, 814] },
 ];
 const catalogueById = new Map(catalogue.map((item) => [item.id, item]));
 
@@ -1500,17 +1512,17 @@ const removedDuplicateIds = new Set([374, 375]);
 function validateGroups() {
   const ids = groups.flatMap((group) => [...group.variantIds]);
 
-  if (ids.length !== 806) {
-    throw new Error(`Expected 806 active catalogue variants, received ${ids.length}`);
+  if (ids.length !== 812) {
+    throw new Error(`Expected 812 active catalogue variants, received ${ids.length}`);
   }
 
   const unique = new Set(ids);
 
-  if (unique.size !== 806) {
+  if (unique.size !== 812) {
     throw new Error("Duplicate SR.NO. found in product groups");
   }
 
-  for (let id = 1; id <= 808; id += 1) {
+  for (let id = 1; id <= 814; id += 1) {
     if (removedDuplicateIds.has(id)) continue;
 
     if (!unique.has(id)) {
